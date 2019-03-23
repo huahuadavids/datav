@@ -1,0 +1,227 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>huahuadavids</title>
+    <script src="https://webapi.amap.com/maps?v=1.4.13&key=8d94010f746790c9a85671a483ec54f7"></script>
+</head>
+<body>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    html, body {
+        width: 100%;
+        height: 100%;
+    }
+
+    #app {
+        width: 100%;
+        height: 100%;
+    }
+
+    @keyframes hua {
+        from {
+            transform: scale(0.9,0.9)
+        }
+        to {
+            transform: scale(1.2,1.2)
+        }
+    }
+
+
+
+    #marker {
+        width:160px;
+        height:160px;
+        border-radius: 50%;
+        color:#fff;
+        background: rgba(255,255,255,.3);
+        animation: hua 2.2s infinite;
+    }
+</style>
+<div id="app">
+
+</div>
+
+<script>
+  const mapConfig = {
+    zoom: 14,                                                    // PC上，参数zoom可设范围：[3,18]；
+    center: [121.455738, 31.183267],
+    // viewMode: '2D',                                              // 设置地图模式 默认2d
+    lang: 'zh_cn',                                               // 设置地图语言类型
+    mapStyle: '' || 'amap://styles/d33a7372234ff53e1c7fb012013f774b',  // 设置地图的显示样式
+    isHotspot: true,
+    // pitch: 75, // 地图俯仰角度，有效范围 0 度- 83 度
+    // viewMode: '3D' // 地图模式
+  }
+
+
+  const attr = {
+    showIndoorMap: false, // 是否在有矢量底图的时候自动展示室内地图，PC默认true,移动端默认false
+    resizeEnable: true, //是否监控地图容器尺寸变化，默认值为false
+    dragEnable: false, // 地图是否可通过鼠标拖拽平移，默认为true
+    keyboardEnable: false, //地图是否可通过键盘控制，默认为true
+    doubleClickZoom: false, // 地图是否可通过双击鼠标放大地图，默认为true
+    zoomEnable: false, //地图是否可缩放，默认值为true
+    rotateEnable: false, // 地图是否可旋转，3D视图默认为true，2D视图默认false
+  }
+
+
+  var map = new AMap.Map('app', Object.assign(mapConfig, {}));
+
+
+  map.setFeatures([
+    'road',
+    'point',
+    'bg',
+    // 'building'
+  ]); // 多个种类要素显示
+
+  /**
+   * @name 添加插件
+   */
+  function addPlugin(map) {
+    // 同时引入工具条插件，比例尺插件和鹰眼插件
+    AMap.plugin([
+      'AMap.ToolBar',
+      'AMap.Scale',
+      'AMap.OverView',
+      'AMap.MapType',
+      'AMap.Geolocation',
+    ], function () {
+      // 在图面添加工具条控件，工具条控件集成了缩放、平移、定位等功能按钮在内的组合控件
+      map.addControl(new AMap.ToolBar());
+
+      // 在图面添加比例尺控件，展示地图在当前层级和纬度下的比例尺
+      map.addControl(new AMap.Scale());
+
+      // 在图面添加鹰眼控件，在地图右下角显示地图的缩略图
+      map.addControl(new AMap.OverView({isOpen: true}));
+
+      // 在图面添加类别切换控件，实现默认图层与卫星图、实施交通图层之间切换的控制
+      map.addControl(new AMap.MapType());
+
+      // 在图面添加定位控件，用来获取和展示用户主机所在的经纬度位置
+      map.addControl(new AMap.Geolocation());
+    });
+  }
+
+  //  addPlugin(map);
+
+
+  /**
+   * @name 地图层操作
+   */
+  function operateLayer() {
+    var layer1 = new AMap.TileLayer.Satellite();
+    var layer2 = new AMap.TileLayer.RoadNet();
+    var layers = [
+      layer1,
+      layer2
+    ]
+    // 添加到地图上
+    map.add(layers);
+    // 移除到地图上
+    map.remove(layer1);
+  }
+
+
+  /**
+   * @name 添加锚点
+   * @type {AMap.Marker}
+   */
+  const contents = "<div id='marker'></div>"
+  var marker = new AMap.Marker({
+    position: [121.455738, 31.183267],//位置
+    title: 'shanghai',
+    icon: "https://webapi.amap.com/theme/v1.3/markers/n/mark_b.png", //自定义icon
+    // content: '' 自定义内容，可以是html，可以加点击事件
+    // offset 图标的偏移
+    content: contents
+  })
+  map.add(marker);//添加到地图
+
+
+  var circle = new AMap.Circle({
+    center: new AMap.LngLat("121.455738", "31.183267"), // 圆心位置
+    radius: 300,  //半径
+    strokeColor: "#F33",  //线颜色
+    strokeOpacity: 1,  //线透明度
+    strokeWeight: 3,  //线粗细度
+    fillColor: "#53ee69",  //填充颜色
+    fillOpacity: 0.45 //填充透明度
+  });
+  // map.add(circle);//添加到地图
+
+  const plys = [
+    [
+      121.44493103027345,
+      31.242746593899973
+    ],
+    [
+      121.44699096679688,
+      31.205166867169954
+    ],
+    [
+      121.50535583496092,
+      31.208103321325254
+    ],
+    [
+      121.51359558105469,
+      31.236288641793006
+    ],
+    [
+      121.44493103027345,
+      31.242746593899973
+    ]
+  ]
+
+  // 多边形轮廓线的节点坐标数组
+  var path = [
+    new AMap.LngLat(plys[0][0],plys[0][1]),
+    new AMap.LngLat(plys[1][0],plys[1][1]),
+    new AMap.LngLat(plys[2][0],plys[2][1]),
+    new AMap.LngLat(plys[3][0],plys[3][1]),
+
+  ];
+
+  var polygon = new AMap.Polygon({
+    path: path,
+    fillColor: 'rgba(255,255,255,.3)', // 多边形填充颜色
+    borderWeight: 2, // 线条宽度，默认为 1
+    strokeColor: 'rgba(255,255,255,.5)', // 线条颜色
+  });
+
+  // map.add(polygon);
+
+
+  /**
+   * @life circles
+   */
+
+  map.on('complete', function () {
+    console.log("地图图块加载完成后触发")
+  });
+
+  map.on('click', function (e) {
+    console.log(e)
+    console.log(e.lnglat.getLng() + ',' + e.lnglat.getLat())
+  });
+
+  map.on('moveend', function (e) {
+    // 获取城市中心点位置
+    map.getCity(function (e) {
+      console.log(e)
+    })
+  });
+  //map.destroy( );
+
+
+</script>
+</body>
+</html>

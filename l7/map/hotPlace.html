@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>地图热点</title>
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+        }
+        .map{
+            height: 100%;
+            width: 100%;
+            float: left;
+        }
+        .info-title{
+            font-weight: bolder;
+            color: #fff;
+            font-size: 14px;
+            line-height: 26px;
+            padding: 0 0 0 6px;
+            background: #25A5F7
+        }
+        .info-content{
+            padding: 4px;
+            color: #666666;
+            line-height: 23px;
+            font: 12px Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial;
+        }
+        .info-content img{
+            float: left;
+            margin: 3px;
+        }
+        .amap-info-combo .keyword-input {
+            height: auto;
+        }
+    </style>
+    <script src="https://webapi.amap.com/maps?v=1.4.13&key=8d94010f746790c9a85671a483ec54f7&plugin=AMap.PlaceSearch,AMap.AdvancedInfoWindow"></script>
+    <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+</head>
+<body>
+<div id="container" class="map"></div>
+<div id="tip">鼠标悬停热点试试</div>
+<script>
+  var map = new AMap.Map('container', {
+    resizeEnable: true,
+    center: [116.397428, 39.90923],
+    zoom: 13,
+    isHotspot: true
+  });
+
+
+  var placeSearch = new AMap.PlaceSearch();  //构造地点查询类
+  var infoWindow=new AMap.AdvancedInfoWindow({});
+  map.on('hotspotover', function(result) {
+    placeSearch.getDetails(result.id, function(status, result) {
+      if (status === 'complete' && result.info === 'OK') {
+        placeSearch_CallBack(result);
+      }
+    });
+  });
+
+  //回调函数
+  function placeSearch_CallBack(data) { //infoWindow.open(map, result.lnglat);
+    var poiArr = data.poiList.pois;
+    var location = poiArr[0].location;
+    infoWindow.setContent(createContent(poiArr[0]));
+    infoWindow.open(map,location);
+  }
+  function createContent(poi) {  //信息窗体内容
+    var s = [];
+    s.push('<div class="info-title">'+poi.name+'</div><div class="info-content">'+"地址：" + poi.address);
+    s.push("电话：" + poi.tel);
+    s.push("类型：" + poi.type);
+    s.push('<div>');
+    return s.join("<br>");
+  }
+</script>
+</body>
+</html>

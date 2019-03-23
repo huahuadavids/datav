@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/os/rmsportal/PqLCOJpqoOUfuPRacUzE.css"/>
+    <title>3D柱状图</title>
+    <style> ::-webkit-scrollbar {
+        display: none;
+    }
+
+    html, body {
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<script>/*Fixing iframe window.innerHeight 0 issue in Safari*/
+document.body.clientHeight; </script>
+<script src="https://webapi.amap.com/maps?v=1.4.8&key=8d94010f746790c9a85671a483ec54f7"></script>
+<script src="https://gw.alipayobjects.com/os/antv/assets/lib/jquery-3.2.1.min.js"></script>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.l7-1.0.0/dist/l7.min.js"></script>
+
+<script>
+
+  var map = new AMap.Map('map', {
+    zoom: 10,
+    center: [116.397428, 39.90923],
+    mapStyle: 'amap://styles/d33a7372234ff53e1c7fb012013f774b', //设置地图的显示样式
+  });
+
+
+
+  const l7Config  = {
+    id: 'map',
+    mapStyle: 'dark',
+    // mapStyle: 'amap://styles/d33a7372234ff53e1c7fb012013f774b', // 样式URL
+    center: [121.456024,31.202786],
+    pitch: 35,
+    zoom: 3.88, //缩放界别
+    rotation: 4.183582
+  }
+
+  var scene = new L7.Scene(l7Config);
+
+  window.scene = scene;
+
+  scene.on('loaded', function () {
+    console.log("LOAD")
+    $.get('./3d.json', function (data) {
+      scene.PointLayer({
+        zIndex: 2
+      }).source(data.list, {
+        type: 'array',
+        x: 'j',
+        y: 'w'
+      }).shape('3d:circle').size('t', function (level) {
+        return [2, 2, level * 3 + 20];
+      }).active(true).color('t', ["#002466", "#105CB3", "#2894E0", "#CFF6FF", "#FFF5B8", "#FFAB5C", "#F27049", "#730D1C"]).render();
+    });
+  });
+
+  scene.on('mapmove', function(){
+    console.log('move')
+  })
+
+  scene.on('click', (ev)=>{
+    console.log(ev)
+  });
+
+
+</script>
+
+
+</body>
+</html>

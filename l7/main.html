@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/os/rmsportal/PqLCOJpqoOUfuPRacUzE.css" />
+    <title>huaua</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <style> ::-webkit-scrollbar{display:none;}html,body{overflow:hidden;margin:0;}
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+
+<script src="https://webapi.amap.com/maps?v=1.4.8&key=15cd8a57710d40c9b7c0e3cc120f1200"></script>
+<script src="https://gw.alipayobjects.com/os/antv/assets/lib/jquery-3.2.1.min.js"></script>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.l7-1.0.0/dist/l7.min.js"></script>
+
+<script>
+const datas  = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.50741577148439,
+          31.142304905845737
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.44493103027345,
+              31.242746593899973
+            ],
+            [
+              121.44699096679688,
+              31.205166867169954
+            ],
+            [
+              121.50535583496092,
+              31.208103321325254
+            ],
+            [
+              121.51359558105469,
+              31.236288641793006
+            ],
+            [
+              121.44493103027345,
+              31.242746593899973
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
+  var scene = new L7.Scene({
+    id: 'map',
+    mapStyle: 'dark',
+    // mapStyle: 'amap://styles/d33a7372234ff53e1c7fb012013f774b', // 样式URL
+    center: [121.456024,31.202786],
+    pitch: 35,
+    zoom: 3.88, //缩放界别
+    rotation: 4.183582
+  });
+
+  window.scene = scene;
+
+  scene.on('loaded', function () {
+
+    scene.PolygonLayer()
+      .source(datas)
+      .color('#FFAB5C')
+      .shape('fill')
+      .active(true)
+      .style({
+        opacity: 1
+      })
+      .render();
+     });
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

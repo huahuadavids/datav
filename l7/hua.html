@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/os/rmsportal/PqLCOJpqoOUfuPRacUzE.css" />
+    <title>huaua</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <style> ::-webkit-scrollbar{display:none;}html,body{overflow:hidden;margin:0;}
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+
+<script src="https://webapi.amap.com/maps?v=1.4.8&key=15cd8a57710d40c9b7c0e3cc120f1200"></script>
+<script src="https://gw.alipayobjects.com/os/antv/assets/lib/jquery-3.2.1.min.js"></script>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.l7-1.0.0/dist/l7.min.js"></script>
+
+<script>
+
+  var map = new AMap.Map('map', {
+    // zoom:9,              //级别
+    // zooms: [7,10],        //可以缩放的级别 取值范围[3-18]
+    mapStyle: 'amap://styles/d33a7372234ff53e1c7fb012013f774b',
+    // resizeEnable:       true,
+    // layers: [//使用多个图层// new AMap.TileLayer.Satellite(),// new AMap.TileLayer.RoadNet()
+    // ],
+    //  center: [116.397428, 39.90923],//中心点坐标
+    // viewMode:'3D'//使用3D视图
+  });
+  map.setMapStyle('amap://styles/d33a7372234ff53e1c7fb012013f774b');
+  // /**
+  //  * @name 添加标记
+  //  * @type {AMap.Marker}
+  //  */
+  //
+  // var infoWindow = new AMap.InfoWindow({ //创建信息窗体
+  //   isCustom: true,  //使用自定义窗体
+  //   content:'<div>信息窗体</div>', //信息窗体的内容可以是任意html片段
+  //   offset: new AMap.Pixel(16, -45)
+  // });
+  // var onMarkerClick  =  function(e) {
+  //   infoWindow.open(map, e.target.getPosition());//打开信息窗体
+  //   //e.target就是被点击的Marker
+  // }
+  //
+  // var marker = new AMap.Marker({
+  //   position:[116.39, 39.9]//位置
+  // })
+  // map.add(marker);//添加到地图
+  // // map.remove(marker)
+  // marker.on('click',onMarkerClick);//绑定click事件
+  //
+
+
+  // var path = [
+  //   [116.403322, 39.920255],
+  //   [116.410703, 39.897555],
+  //   [116.402292, 39.892353],
+  //   [116.389846, 39.891365]
+  // ]
+  //
+  // /**
+  //  * @name 添加多边形
+  //  * @type {AMap.Polygon}
+  //  */
+  // var polygon = new AMap.Polygon({
+  //   path: path,
+  //   strokeColor: "#FF33FF",
+  //   strokeWeight: 6,
+  //   strokeOpacity: 0.2,
+  //   fillOpacity: 0.4,
+  //   fillColor: '#1791fc',
+  //   zIndex: 50,
+  // })
+  //
+  // map.add(polygon)
+  // map.setFitView([ polygon ])
+
+</script>
+
+
+</body>
+</html>

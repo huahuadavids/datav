@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    *{
+        padding:0;
+        margin:0;
+    }
+    html,body {
+        width:100%;
+        height:100%;
+    }
+    #app {
+        width:100%;
+        height:100%;
+    }
+</style>
+<div id="app">
+
+</div>
+
+<script src="https://webapi.amap.com/maps?v=1.4.8&key=8d94010f746790c9a85671a483ec54f7"></script>
+
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.l7-1.1.0/dist/l7.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ console.log(L7.version)
+  // 初始化 场景
+  var scene = new L7.Scene({
+    id: 'app',
+    mapStyle: 'dark', // 样式URL
+    center: [102.602992, 23.107329],
+    pitch: 15,
+    zoom: 13.82
+  });
+  // 初始化地图，添加线图层
+  scene.on('loaded', function() {
+    $.get('https://gw.alipayobjects.com/os/rmsportal/ZVfOvhVCzwBkISNsuKCc.json', function(data) {
+      scene.LineLayer({
+        zIndex: 2
+      }).source(data).size('ELEV', function(value) {
+        return [1, (value - 1000) * 7];
+      }).active(true)
+        .shape('line')
+        .color('ELEV', ["#E8FCFF", "#CFF6FF", "#A1E9ff", "#65CEF7",
+          "#3CB1F0", "#2894E0", "#1772c2", "#105CB3", "#0D408C", "#002466"].reverse())
+        .render();
+    });
+  });
+</script>
+</body>
+</html>
