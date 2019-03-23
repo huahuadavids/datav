@@ -2,32 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>d3 v5.9</title>
 </head>
 <body>
 <style>
-    *{
-        padding:0;
-        margin:0;
+    * {
+        padding: 0;
+        margin: 0;
     }
+
     #app {
         background: #ccc;
-        width:500px;
-        height:200px;
+        width: 500px;
+        height: 200px;
     }
 </style>
 <div id="app">
-
-
+    <p></p>
+    <p></p>
 </div>
 <script src="lib/d3.js"></script>
 <script>
 
-var svg = d3.select("#app").append("svg").attr('width', 500).attr('height', 200)
+ function demo1(){
+   var p = d3.select("#app")
+     .selectAll("p");
 
-var g = d3.select("svg").append("g").attr("transform", "translate(50,30)")
+   p.text("Hello World");
+ }
 
+ function demo2(){
+   var str = "is an animal";//新建一个字符串
+   var p = d3.select("#app")
+     .selectAll("p");
 
+   p.datum(str)//绑定
+     .text(function(d,i){
+       return "第"+i+"个元素"+d;
+     });
+ }
+
+ function demo3(){
+   var dataset = ["so cute","cute","fat"];
+   var p = d3.select("#app")
+     .selectAll("p");
+
+   p.data(dataset)
+     .text(function(d,i){
+       return "第"+i+"个动物"+d;
+     });
+ }
+
+ demo3.apply()
 
 </script>
 </body>
