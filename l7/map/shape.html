@@ -6,26 +6,31 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
     <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" type="text/css">
     <style>
-        html,body,#container{
+        html, body, #container {
             height: 100%
         }
-        .input-item{
+
+        .input-item {
             height: 2.2rem;
         }
-        .btn{
+
+        .btn {
             width: 6rem;
             margin: 0 1rem 0 2rem;
         }
-        .input-text{
+
+        .input-text {
             width: 4rem;
-            margin-right:1rem;
+            margin-right: 1rem;
         }
     </style>
     <title>鼠标工具绘制</title>
 </head>
 <body>
 <div id='container'></div>
+
 <div class='info'>操作说明：圆和矩形通过拖拽来绘制，其他覆盖物通过点击来绘制</div>
+
 <div class="input-card" style='width: 24rem;'>
     <div class="input-item">
         <input type="radio" name='func' checked="" value='marker'><span class="input-text">画点</span>
@@ -37,67 +42,64 @@
         <input type="radio" name='func' value='circle'><span class="input-text">画圆</span>
     </div>
     <div class="input-item">
-        <input id="clear" type="button" class="btn" value="清除" />
-        <input id="close" type="button" class="btn" value="关闭绘图" />
+        <input id="clear" type="button" class="btn" value="清除"/>
+        <input id="close" type="button" class="btn" value="关闭绘图"/>
     </div>
 </div>
 <script src="https://webapi.amap.com/maps?v=1.4.13&key=8d94010f746790c9a85671a483ec54f7&plugin=AMap.MouseTool"></script>
 <script type="text/javascript">
 
-
-
-  var map = new AMap.Map('container',{
-    zoom:14
-  });
-
+  var map = new AMap.Map('container', {zoom: 14});
+  console.log(map)
   var mouseTool = new AMap.MouseTool(map);
-
-
 
   //监听draw事件可获取画好的覆盖物
   var overlays = [];
-
-
-  mouseTool.on('draw',function(e){
+  mouseTool.on('draw', function (e) {
     console.log(e)
     overlays.push(e.obj);
+    overlays.push(e.obj.toGeoJSON());
+    mouseTool.close(false)
   })
 
-  function draw(type){
-    switch(type){
-      case 'marker':{
+  map.on("click" ,function(e){
+    console.log(e)
+  })
+  function draw(type) {
+    switch (type) {
+      case 'marker': {
         mouseTool.marker({
           //同Marker的Option设置
         });
         break;
       }
-      case 'polyline':{
+      case 'polyline': {
         mouseTool.polyline({
-          strokeColor:'#80d8ff'
+          strokeColor: '#80d8ff'
           //同Polyline的Option设置
         });
         break;
       }
-      case 'polygon':{
+      case 'polygon': {
         mouseTool.polygon({
-          fillColor:'#00b0ff',
-          strokeColor:'#80d8ff'
+          fillColor: '#00b0ff',
+          strokeColor: '#80d8ff'
           //同Polygon的Option设置
         });
         break;
       }
-      case 'rectangle':{
+      case 'rectangle': {
         mouseTool.rectangle({
-          fillColor:'#00b0ff',
-          strokeColor:'#80d8ff'
+          fillColor: '#00b0ff',
+          strokeColor: '#80d8ff'
           //同Polygon的Option设置
         });
         break;
       }
-      case 'circle':{
+      case 'circle': {
         mouseTool.circle({
-          fillColor:'#00b0ff',
-          strokeColor:'#80d8ff'
+          fillColor: '#00b0ff',
+          strokeColor: '#80d8ff'
           //同Circle的Option设置
         });
         break;
@@ -106,23 +108,42 @@
   }
 
   var radios = document.getElementsByName('func');
-  for(var i=0;i<radios.length;i+=1){
-    radios[i].onchange = function(e){
+  for (var i = 0; i < radios.length; i += 1) {
+    radios[i].onchange = function (e) {
       draw(e.target.value)
     }
   }
   draw('marker')
 
-  document.getElementById('clear').onclick = function(){
+  document.getElementById('clear').onclick = function () {
     map.remove(overlays)
     overlays = [];
   }
-  document.getElementById('close').onclick = function(){
+  document.getElementById('close').onclick = function () {
     mouseTool.close(true)//关闭，并清除覆盖物
-    for(var i=0;i<radios.length;i+=1){
+    for (var i = 0; i < radios.length; i += 1) {
       radios[i].checked = false;
     }
   }
+
+</script>
+<script>
+
+var a = {
+  name: 'sass',
+  from: 'css'
+}
+Object.freeze(a)
+a.name = 'less'
+var b = Object.assign({},  a)
+
+
+b.from = 'js'
+console.log(b)
+
+console.log(a)
+
+
 </script>
 </body>
 </html>

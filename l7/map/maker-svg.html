@@ -1,0 +1,233 @@
+<!-- 重点参数：getMarker -->
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <!-- 原始地址：//webapi.amap.com/ui/1.0/ui/misc/MarkerList/examples/svg-marker.html -->
+    <base href="//webapi.amap.com/ui/1.0/ui/misc/MarkerList/examples/" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>使用SvgMarker</title>
+    <link rel="stylesheet" type="text/css" href="./common.css">
+    <style>
+        .my-svg-marker .amap-simple-marker-label {
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .my-shape-ShieldPin .amap-simple-marker-label,
+        .my-shape-SquarePin .amap-simple-marker-label,
+        .my-shape-WaterDrop .amap-simple-marker-label {
+            top: 13px;
+        }
+
+        .my-shape-RectangleFlagPin .amap-simple-marker-label {
+            top: 11px;
+        }
+
+        .my-shape-TriangleFlagPin .amap-simple-marker-label {
+            top: 13px;
+            left: -10px;
+        }
+
+        .my-shape-FivePointsStar .amap-simple-marker-label {
+            top: 20px;
+        }
+
+        #renderBtn {
+            width: 100%;
+            padding: 7px 0;
+        }
+    </style>
+</head>
+
+<body>
+<div id="outer-box">
+    <div id="container">
+    </div>
+    <div id="panel">
+        <div id="intro">
+            <h3>SvgMarker</h3>
+        </div>
+        <button id="renderBtn">随机形状</button>
+        <ul id="my-list"></ul>
+    </div>
+</div>
+<script type="text/javascript" src='//webapi.amap.com/maps?v=1.4.13&key=8d94010f746790c9a85671a483ec54f7'></script>
+<!-- UI组件库 1.0 -->
+<script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+<script type="text/javascript">
+  //创建地图
+  var map = new AMap.Map('container', {
+    zoom: 9
+  });
+
+  AMapUI.loadUI(['misc/MarkerList', 'overlay/SvgMarker', 'overlay/SimpleInfoWindow'],
+    function(MarkerList, SvgMarker, SimpleInfoWindow) {
+
+      if (!SvgMarker.supportSvg) {
+        //当前环境并不支持SVG，此时SvgMarker会回退到父类，即SimpleMarker
+        alert('当前环境不支持SVG');
+      }
+
+      var markerList = new MarkerList({
+        //关联的map对象
+        map: map,
+        //列表的dom容器的id
+        listContainer: 'my-list',
+
+        //返回数据项的Id
+        getDataId: function(dataItem, index) {
+          //index表示该数据项在数组中的索引位置，从0开始，如果确实没有id，可以返回index代替
+          return dataItem.id;
+        },
+        //返回数据项的位置信息，需要是AMap.LngLat实例，或者是经纬度数组，比如[116.789806, 39.904989]
+        getPosition: function(dataItem) {
+          return dataItem.position;
+        },
+        //返回数据项对应的Marker
+        getMarker: function(dataItem, context, recycledMarker) {
+
+          var shape = new SvgMarker.Shape[dataItem.shapeCls]({
+              fillColor: 'black',
+              strokeColor: 'gray',
+              strokeWidth: 1,
+              width: 60
+            }),
+            containerClassNames = 'my-svg-marker my-shape-' + dataItem.shapeCls;
+
+
+          //存在可回收利用的marker
+          if (recycledMarker) {
+            //直接更新内容返回
+            recycledMarker.setIconLabel(context.id);
+            recycledMarker.setSvgShape(shape);
+            recycledMarker.setContainerClassNames(containerClassNames);
+            return recycledMarker;
+          }
+
+          //返回一个新的Marker
+          return new SvgMarker(shape, {
+            showPositionPoint: true,
+            containerClassNames: containerClassNames,
+            iconLabel: context.id
+          });
+        },
+        //返回数据项对应的infoWindow
+        getInfoWindow: function(dataItem, context, recycledInfoWindow) {
+
+          var offset = new AMap.Pixel(0, -59);
+
+          switch (dataItem.shapeCls) {
+            case 'WaterDrop':
+              offset = new AMap.Pixel(0, -67);
+              break;
+            case 'SquarePin':
+              break;
+            case 'ShieldPin':
+              break;
+            case 'FivePointsStar':
+              offset = new AMap.Pixel(0, -25);
+              break;
+            case 'TriangleFlagPin':
+              offset = new AMap.Pixel(20, -80);
+              break;
+            case 'RectangleFlagPin':
+              offset = new AMap.Pixel(20, -80);
+              break;
+          }
+          if (recycledInfoWindow) {
+            //存在可回收利用的infoWindow, 直接更新内容返回
+            recycledInfoWindow.setInfoTitle(dataItem.title);
+            recycledInfoWindow.setInfoBody(dataItem.desc);
+            recycledInfoWindow.setOffset(offset);
+            return recycledInfoWindow;
+          }
+
+          //返回一个新的InfoWindow
+          return new SimpleInfoWindow({
+            offset: offset,
+            infoTitle: dataItem.title,
+            infoBody: dataItem.desc
+          });
+        },
+        getListElement: function(dataItem, context, recycledListElement) {
+
+          var tpl = '<%- dataItem.title %>';
+
+          var content = MarkerList.utils.template(tpl, {
+            dataItem: dataItem,
+            dataId: context.id
+          });
+
+          if (recycledListElement) {
+            //存在可回收利用的listElement, 直接更新内容返回
+            recycledListElement.innerHTML = content;
+            return recycledListElement;
+          }
+
+          //返回一段html，MarkerList将利用此html构建一个新的dom节点
+          return '<li>' + content + '</li>';
+        }
+
+      });
+
+      //构建一个数据项数组，数据项本身没有格式要求，但需要支持下述的getDataId和getPosition
+      var data = [{
+        id: 'A',
+        position: [116.020764, 39.904989],
+        title: '标题_1',
+        desc: '描述_1'
+      }, {
+        id: 'B',
+        position: [116.405285, 39.904989],
+        title: '标题_2',
+        desc: '描述_2'
+      }, {
+        id: 'C',
+        position: [116.789806, 39.904989],
+        title: '标题_3',
+        desc: '描述_3'
+      }];
+
+
+      function randomInt(min, max) {
+
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      function randomPickFromArray(arr){
+        return arr[randomInt(0, arr.length - 1)];
+      }
+
+      var shapeClses = [
+        'WaterDrop',
+        'SquarePin',
+        'ShieldPin',
+        'FivePointsStar',
+        'TriangleFlagPin',
+        'RectangleFlagPin'
+      ];
+
+      function randomRender() {
+
+        for (var i = 0, len = data.length; i < len; i++) {
+          //随机设定一个Shape
+          data[i].shapeCls =randomPickFromArray(shapeClses);
+        }
+
+        //展示该数据
+        markerList.render(data);
+      }
+
+
+      markerList.utils.$('#renderBtn').click(randomRender);
+
+      randomRender();
+
+      window.markerList = markerList;
+    });
+</script>
+</body>
+
+</html>

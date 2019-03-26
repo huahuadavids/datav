@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>CircleMarker</title>
+    <style type="text/css">
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            margin:0;
+        }
+    </style>
+    <script type="text/javascript" src='https://a.amap.com/jsapi_demos/static/resource/capitals.js'></script>
+    <script type="text/javascript" src='https://webapi.amap.com/maps?v=1.4.13&key=8d94010f746790c9a85671a483ec54f7'></script>
+</head>
+<body>
+<div id="map"></div>
+<script>
+  var map = new AMap.Map('map', {
+    // viewMode: '3D',
+    zoom: 4,
+    center: [ 108, 34]
+  })
+  for(var i=0;i<capitals.length;i+=1){
+    var center = capitals[i].center;
+    var circleMarker = new AMap.CircleMarker({
+      center:center,
+      radius:10+Math.random()*10,//3D视图下，CircleMarker半径不要超过64px
+      strokeColor:'red',
+      strokeWeight:2,
+      strokeOpacity:0.5,
+      fillColor:'rgba(0,0,255,1)',
+      fillOpacity:0.5,
+      zIndex:10,
+      bubble:true,
+      cursor:'pointer',
+      clickable: true
+    })
+    circleMarker.setMap(map)
+    circleMarker.on('click', function(e){
+      console.log(e)
+    });
+  }
+</script>
+</body>
+</html>

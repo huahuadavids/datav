@@ -31,18 +31,18 @@ document.body.clientHeight; </script>
 
 <script>
 
-  var map = new AMap.Map('map', {
-    zoom: 10,
-    center: [116.397428, 39.90923],
-    mapStyle: 'amap://styles/d33a7372234ff53e1c7fb012013f774b', //设置地图的显示样式
-  });
+  // var map = new AMap.Map('map', {
+  //   zoom: 10,
+  //   center: [116.397428, 39.90923],
+  //   mapStyle: 'amap://styles/d33a7372234ff53e1c7fb012013f774b', //设置地图的显示样式
+  // });
 
 
 
   const l7Config  = {
     id: 'map',
-    mapStyle: 'dark',
-    // mapStyle: 'amap://styles/d33a7372234ff53e1c7fb012013f774b', // 样式URL
+    // mapStyle: 'dark',
+    mapStyle: 'amap://styles/d33a7372234ff53e1c7fb012013f774b', // 样式URL
     center: [121.456024,31.202786],
     pitch: 35,
     zoom: 3.88, //缩放界别
@@ -52,7 +52,7 @@ document.body.clientHeight; </script>
   var scene = new L7.Scene(l7Config);
 
   window.scene = scene;
-
+  console.log(scene)
   scene.on('loaded', function () {
     console.log("LOAD")
     $.get('./3d.json', function (data) {

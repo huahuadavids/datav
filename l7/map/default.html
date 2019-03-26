@@ -26,29 +26,30 @@
 
     @keyframes hua {
         from {
-            transform: scale(0.9,0.9)
+            transform: scale(0.9, 0.9)
         }
         to {
-            transform: scale(1.2,1.2)
+            transform: scale(1.2, 1.2)
         }
     }
 
-
-
     #marker {
-        width:160px;
-        height:160px;
+        width: 160px;
+        height: 160px;
         border-radius: 50%;
-        color:#fff;
-        background: rgba(255,255,255,.3);
+        border: 2px solid #ffffff;
+        color: #fff;
+        background: rgba(255, 255, 255, .3);
         animation: hua 2.2s infinite;
     }
 </style>
+
 <div id="app">
 
 </div>
 
 <script>
+
   const mapConfig = {
     zoom: 14,                                                    // PC上，参数zoom可设范围：[3,18]；
     center: [121.455738, 31.183267],
@@ -183,10 +184,10 @@
 
   // 多边形轮廓线的节点坐标数组
   var path = [
-    new AMap.LngLat(plys[0][0],plys[0][1]),
-    new AMap.LngLat(plys[1][0],plys[1][1]),
-    new AMap.LngLat(plys[2][0],plys[2][1]),
-    new AMap.LngLat(plys[3][0],plys[3][1]),
+    new AMap.LngLat(plys[0][0], plys[0][1]),
+    new AMap.LngLat(plys[1][0], plys[1][1]),
+    new AMap.LngLat(plys[2][0], plys[2][1]),
+    new AMap.LngLat(plys[3][0], plys[3][1]),
 
   ];
 

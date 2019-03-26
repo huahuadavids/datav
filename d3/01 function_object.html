@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app"></div>
+
+
+
+<script src="d3@3.5.16/d3.js"></script>
+<script>
+  /**
+   * @description SimpleWidget is a function also an Object
+   * it has private variables and private functions
+   */
+  function SimpleWidget(sepc) {
+    var instance = {}           // private variable
+    var headline, description;  // private variable
+
+    // private function
+    instance.render = function () {
+      var div = d3.select('#app').append("div")
+
+      div.append("h3").text(headline)
+
+      div.attr("class", "box").attr("style", "color:" + sepc.color)
+        .append("p").text(description)
+      return instance;
+    }
+    instance.headline = function (h) {
+      if (!arguments.length) h;
+        headline = h;
+      return instance;
+    }
+
+    instance.description = function (h) {
+      if (!arguments.length) h;
+        description = h;
+      return instance;
+    }
+    return instance;
+  }
+
+
+  var widget = SimpleWidget({color: '#6495ed'}).headline("simple widget").description("this is a simple widget")
+
+  widget.render()
+</script>
+
+
+</body>
+</html>
