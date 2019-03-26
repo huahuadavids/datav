@@ -9,7 +9,6 @@
 <div id="app"></div>
 
 
-
 <script src="d3@3.5.16/d3.js"></script>
 <script>
   /**
@@ -30,24 +29,28 @@
         .append("p").text(description)
       return instance;
     }
+
     instance.headline = function (h) {
       if (!arguments.length) h;
-        headline = h;
+      headline = h;
       return instance;
     }
 
     instance.description = function (h) {
       if (!arguments.length) h;
-        description = h;
+      description = h;
       return instance;
     }
     return instance;
   }
 
 
-  var widget = SimpleWidget({color: '#6495ed'}).headline("simple widget").description("this is a simple widget")
+  var widget = SimpleWidget({color: '#6495ed'}).headline("simple widget")
+    .description("this is a simple widget")
 
   widget.render()
+
+  console.log(widget.headline())
 </script>
 
 <h4>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据绑定</title>
+</head>
+<body>
+<style>
+    .h-bar {
+        min-height: 15px;
+        min-width: 10px;
+        background-color: steelblue;
+        margin-bottom: 2px;
+        font-size: 11px;
+        color: #f0f8ff;
+        text-align: right;
+        padding-right: 2px;
+        transition: width 0.3s;
+    }
+</style>
+
+<div id="app">
+
+</div>
+
+<script src="d3@3.5.16/d3.js"></script>
+<script>
+  const data = [
+    10, 15, 30, 50, 80
+  ]
+
+  function render(data) {
+    // enter
+    const enter = d3.select("#app").selectAll("div.h-bar").// 图形  B selection 表示图形集合
+    data(data).// 数据  A
+    enter() //表示没有                         //  A和B的差集，没有被可视化的数据元素
+    console.log(enter)
+    enter.append("div").attr('class', 'h-bar').append("span")
+
+    // update
+    d3.select("#app").selectAll("div.h-bar").data(data).style("width", function (d, index) {
+      return (d * 3) + 'px'
+    }).select("span").text(d => d)
+
+    //exit
+    d3.select("#app").selectAll("div.h-bar").data(data)
+      .exit()
+      .remove()
+  }
+
+  var ins = setInterval(() => {
+    data.shift()
+    data.push(Math.round(Math.random() * 100))
+    render(data)
+  }, 1000)
+  render(data)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="app"></div>
+
+<p></p>
+<p></p>
+<p></p>
+
+<script src="d3@3.5.16/d3.js"></script>
+
+
+<script>
+    const app = d3.select("#app").text("hello world").style("color" ,"red")
+
+    app.attr("foo" ,"bar")
+
+    console.log(app.classed("hua"))
+
+    // add class
+    app.classed("hua" ,true)
+
+    // remove class
+    app.classed("hua" ,false)
+
+
+    // data 代表元素的数据绑定
+    d3.selectAll('p').classed("huahua", true).each(function(data,index){
+      console.log(a)
+      console.log(index)
+      console.log(this)
+      d3.select(this).append('h3').text(index)
+    })
+</script>
+
+
+
+
+</body>
+</html>
