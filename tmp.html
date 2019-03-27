@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+
+  var data = []; // <- A
+
+  var next = function (x) { // <- B
+    return 15 + x * x;
+  };
+
+  var newData = function () { // <- C
+    data.push(next);
+    return data;
+  };
+
+  console.log(data)
+
+  // data.push(newData())
+  console.log(data)
+</script>
+
+
+</body>
+</html>

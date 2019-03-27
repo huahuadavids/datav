@@ -15,8 +15,25 @@
         color: #f0f8ff;
         text-align: right;
         padding-right: 2px;
-        transition: width 0.3s;
+        transition: all 0.3s;
     }
+    .v-bar {
+        min-height: 1px;
+        min-width: 30px;
+        background-color: #4682b4;
+        margin-right: 2px;
+        font-size: 10px;
+        color: #f0f8ff;
+        text-align: center;
+        width: 10px;
+        display: inline-block;
+    }
+
+    .selected {
+        background-color: #f08080;
+
+    }
+
 </style>
 
 <div id="app">
@@ -24,7 +41,7 @@
 </div>
 
 <script src="d3@3.5.16/d3.js"></script>
-<script>
+<script type="text" id="array">
   const data = [
     10, 15, 30, 50, 80
   ]
@@ -54,7 +71,197 @@
     render(data)
   }, 1000)
   render(data)
+
+</script>
+<script type="text" id="object">
+  var data = [ // <- A
+    {width: 10, color: 23},{width: 15, color: 33},
+    {width: 30, color: 40},{width: 50, color: 60},
+    {width: 80, color: 22},{width: 65, color: 10},
+    {width: 55, color: 5},{width: 30, color: 30},
+    {width: 20, color: 60},{width: 10, color: 90},
+    {width: 8, color: 10}
+  ];
+
+  //   这是一个方法，可以把输入值变为颜色
+  var colorScale = d3.scale.linear()
+    .domain([0, 100]).range(["#fff", "blue"]); // <- B
+
+  function render(data) {
+    d3.select("body").selectAll("div.h-bar")
+      .data(data)
+      .enter()
+      .append("div")
+      .attr("class", "h-bar")
+      .append("span");
+
+    d3.select("body").selectAll("div.h-bar")
+      .data(data)
+      .exit().remove();
+
+    d3.select("body").selectAll("div.h-bar")
+      .data(data)
+      .attr("class", "h-bar")
+      .style("width", function (d) { // <- C
+        return (d.width * 5) + "px"; // <- D
+      })
+      .style("background-color", function(d){
+        return colorScale(d.color); // <- E
+      })
+      .select("span")
+      .text(function (d) {
+        return d.width; // <- F
+      });
+  }
+
+  function randomValue() {
+    return Math.round(Math.random() * 100);
+  }
+
+  setInterval(function () {
+    data.shift();
+    data.push({width: randomValue(), color: randomValue()});
+    render(data);
+  }, 1500);
+
+  render(data);
+
+</script>
+<script type="text" id="function in array">
+  var data = []; // <- A
+
+
+  var next = x => 15 + x * x; // <- B
+
+  var newData = function () { // <- C
+    data.push(next);
+    return data;
+  };
+
+  function render() {
+    var selection = d3.select("#app")
+      .selectAll("div")
+      .data(newData); // <- D 会push进去一个函数 ，data是一个函数数组
+
+    selection.enter().append("div").append("span");
+
+    selection.exit().remove();
+
+    selection.attr("class", "v-bar")
+      .style("height", function (d, i) {
+        return d(i) + "px"; // <- E
+      })
+      .select("span")
+      .text(function (d, i) {
+        return d(i); // <- F
+      });
+  }
+
+  setInterval(function () {
+    render();
+  }, 1500);
+
+  render();
 </script>
 
+<script type="text/javascript">
+  var data = [ // <-A
+    {
+      expense: 10,
+      category: "Retail"
+    },
+    {
+      expense: 15,
+      category: "Gas"
+    },
+    {
+      expense: 30,
+      category: "Retail"
+    },
+    {
+      expense: 50,
+      category: "Dining"
+    },
+    {
+      expense: 80,
+      category: "Gas"
+    },
+    {
+      expense: 65,
+      category: "Retail"
+    },
+    {
+      expense: 55,
+      category: "Gas"
+    },
+    {
+      expense: 30,
+      category: "Dining"
+    },
+    {
+      expense: 20,
+      category: "Retail"
+    },
+    {
+      expense: 10,
+      category: "Dining"
+    },
+    {
+      expense: 8,
+      category: "Gas"
+    }
+  ];
+
+  function render(data, category) {
+    d3.select("body").selectAll("div.h-bar") // <-B
+      .data(data)
+      .enter()
+      .append("div")
+      .attr("class", "h-bar")
+      .append("span");
+
+    d3.select("body").selectAll("div.h-bar") // <-C
+      .data(data)
+      .exit().remove();
+
+    d3.select("body").selectAll("div.h-bar") // <-D
+      .data(data)
+      .attr("class", "h-bar")
+      .style("width", function (d) {
+        return (d.expense * 5) + "px";
+      })
+      .select("span")
+      .text(function (d) {
+        return d.category;
+      });
+
+    d3.select("body").selectAll("div.h-bar")
+      .filter(function (d, i) { // <-E
+        return d.category == category;
+      })
+      .classed("selected", true);
+  }
+
+  render(data);
+
+  function select(category) {
+    render(data, category);
+  }
+</script>
+
+<div class="control-group">
+    <button onclick="select('Retail')">
+        Retail
+    </button>
+    <button onclick="select('Gas')">
+        Gas
+    </button>
+    <button onclick="select('Dining')">
+        Dining
+    </button>
+    <button onclick="select()">
+        Clear
+    </button>
+</div>
 </body>
 </html>

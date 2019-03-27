@@ -10,23 +10,63 @@
 <style>
     svg{
         border:2px solid #111;
+        width:100%;
     }
 </style>
 
-<svg width="500" height="500">
-    <rect width="50" height="50" cx="10" cy="10" rx="2"  ry="2"  fill="red" stroke="blue" stroke-width="2">
+<svg  viewBox="0 0 500 500">
+
+
+    <defs>
+        <linearGradient id="MyGradient">
+            <stop offset="5%" stop-color="#A8F" />
+            <stop offset="95%" stop-color="#FDC" />
+        </linearGradient>
+    </defs>
+
+
+    <rect x="0" y="0" width="0" height="200">
+        <animate
+                attributeName="width"
+                attributeType="XML"
+                from="0"
+                to="200"
+                begin="0s"
+                dur="2s"
+                fill="freeze"
+        />
+    </rect>
+
+
+    <text x="100" y="300" fill="url(#MyGradient)" style="font-size: 50px;font-family: 'Arial';">Hello World</text>
+
+    <rect width="50" height="50" x="10" y="10" rx="15"  ry="15"  fill="red" stroke="blue" stroke-width="2">
 
     </rect>
 
-    <circle r="30" cx="200" cy="40" fill="green">
+    <circle r="70" cx="200" cy="140" fill="green" stroke="red">
+        <animate
+                attributeName="r"
+                attributeType="XML"
+                from="0"
+                to="70"
+                begin="0s"
+                dur="2s"
+                fill="freeze"
+        />
 
     </circle>
 
-    <ellipse r="30" cx="300" cy="40" fill="green"  rx="3" ry="8">
+    <ellipse r="30" cx="300" cy="40" fill="green"  rx="30" ry="80">
 
     </ellipse>
 
+    <line x1="40" x2="80" y1="40" y2="490" stroke="#111111" stroke-width="4"></line>
+
 </svg>
+
+
+
 
 
 
