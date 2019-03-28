@@ -28,8 +28,15 @@ https://mapshaper.org/ 可以查看较大的geojson，还能够简化GeoJSON数�
 - 没有数据管理的图形，B\A，表示删除数据后，失去数据关联的图形集合，可以通过函数 selection.exit得到，当我们在这个新的集合调用相关
 函数操作更新或者删除不需要的图形，这个状态叫做exit mode 退出状态 
 
-#### 其他集合操作函数
-> selection.sort 是排序， selection.filter 是过滤 
+#### d3其他操作
+- selection.sort 是排序，
+- selection.filter 是过滤 
+- d3.json 可以从服务端拉取json数据  
+
+#### d3之函数和映射
+> 函数F，是集合A到集合B的映射，如果A是数据域，B是图形域，函数f就是把集合
+A映射到B的一个尺度(scale)
+
 
 
 

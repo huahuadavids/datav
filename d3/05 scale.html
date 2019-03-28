@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Quantitative Scales</title>
+    <script type="text/javascript" src="d3@3.5.16/d3.js"></script>
+</head>
+
+<body>
+
+<style>
+    .clear {
+        clear: both;
+    }
+
+    .baseline {
+        height: 1px;
+        background-color: black;
+    }
+
+    .cell {
+        min-width: 40px;
+        min-height: 20px;
+        margin: 5px;
+        float: left;
+        text-align: center;
+        border: #969696 solid thin;
+        padding: 5px;
+    }
+</style>
+
+<div id="linear" class="clear"><span>n</span></div>
+<div id="linear-capped" class="clear">
+    <span>1 &lt;= a*n + b &lt;= 20</span>
+</div>
+<div id="pow" class="clear"><span>n^2</span></div>
+<div id="pow-capped" class="clear">
+    <span>1 &lt;= a*n^2 + b &lt;= 10</span>
+</div>
+<div id="log" class="clear"><span>log(n)</span></div>
+<div id="log-capped" class="clear">
+    <span>1 &lt;= a*log(n) + b &lt;= 10</span>
+</div>
+
+<script type="text" id="math">
+
+  var max = 11, data = [];
+  for (var i = 1; i < max; ++i) data.push(i);
+
+  /**
+   * @name 线性尺度 - 等价尺度
+   */
+  var linear = d3.scale.linear() // <-A
+    .domain([1, 10]) // <-B   定义域
+    .range([1, 10]); // <-C   值域
+
+  /**
+   * @name 线性尺度 - 不等价尺度
+   */
+  var linearCapped = d3.scale.linear()
+    .domain([1, 10])
+    .range([1, 20]); // <-D
+
+
+  var pow = d3.scale.
+  pow().exponent(2); // <-E
+
+  var powCapped = d3.scale.pow() // <-F
+    .exponent(2)
+    .domain([1, 10])
+    .rangeRound([1, 10]); // <-G
+
+  var log = d3.scale.log(); // <-H
+  var logCapped = d3.scale.log() // <-I
+    .domain([1, 10])
+    .rangeRound([1, 10]);
+
+
+  function render(data, scale, selector) {
+    d3.select(selector).selectAll("div.cell")
+      .data(data)
+      .enter().append("div").classed("cell", true);
+
+    d3.select(selector).selectAll("div.cell")
+      .data(data)
+      .exit().remove();
+
+    d3.select(selector).selectAll("div.cell")
+      .data(data)
+      .style("display", "inline-block")
+      .text(function (d) {
+        return d3.round(scale(d), 2);
+      });
+  }
+
+  render(data, linear, "#linear");
+  render(data, linearCapped, "#linear-capped");
+  render(data, pow, "#pow");
+  render(data, powCapped, "#pow-capped");
+  render(data, log, "#log");
+  render(data, logCapped, "#log-capped");
+
+
+
+
+</script>
+
+
+<div id="time" class="clear">
+    <span>Linear Time Progression<br></span>
+    <span>Mapping [01/01/2013, 12/31/2013] to [0, 1200]<br></span>
+</div>
+
+<script type="text/javascript">
+  var start = new Date(2013, 0, 1), // <-A
+    end = new Date(2013, 11, 31),
+    range = [0, 1200],
+
+    time = d3.time.scale()
+      .domain([start, end]) // <-B
+      .rangeRound(range), // <-C
+    max = 12,
+    data = [];
+
+
+  for (var i = 0; i < max; ++i) { // <-D
+    var date = new Date(start.getTime());
+    date.setMonth(start.getMonth() + i);
+    data.push(date);
+  }
+
+  function render(data, scale, selector) { // <-E
+    d3.select(selector).selectAll("div.fixed-cell")
+      .data(data)
+      .enter()
+      .append("div").classed("fixed-cell", true);
+
+    d3.select(selector).selectAll("div.fixed-cell")
+      .data(data)
+      .exit().remove();
+
+    d3.select(selector).selectAll("div.fixed-cell")
+      .data(data)
+      .style("margin-left", function (d) { // <-F
+        return scale(d) + "px";
+      })
+      .html(function (d) { // <-G
+        var format = d3.time.format("%x"); // <-H
+        return format(d) + "<br>" + scale(d) + "px";
+      });
+  }
+
+  render(data, time, "#time");
+</script>
+
+</body>
+
+</html>
