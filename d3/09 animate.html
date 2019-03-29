@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="d3@3.5.16/d3.js"></script>
+    <link rel="stylesheet" href="./main.css">
+    <title>animate</title>
+</head>
+<body>
+<style>
+    #box {
+        background: #e9967a;
+        width: 500px;
+        height: 500px;
+    }
+
+    .box-active {
+        background: #e93368;
+        width: 100px;
+        height: 100px;
+        margin-left: 400px;
+    }
+</style>
+<div id="box"></div>
+
+
+<script>
+  d3.select("#box").transition().duration(1300)
+    .style("background-color", "#e93368") // <-E
+    .style("margin-left", "600px") // <-F
+    .style("width", "100px")
+    .style("height", "100px")
+
+  //.classed("box-active", true)
+
+
+</script>
+
+
+</body>
+</html>

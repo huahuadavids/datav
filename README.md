@@ -1,10 +1,10 @@
-# datav 
+# datav  
 
-### 数据和信息
+## 数据和信息
 > 数据是纯粹的事实，纯粹意味着这种事实没有任何处理，意义也没有得到揭示
 ，但是信息是数据处理的结果，它揭示了数据的意义，而且是数据的可视化表示 
 
-### 大数据 
+## 大数据 
 - 抛弃不精确的样本数据，分析全部数据（小数据时代 随机采样分析 依赖随机性，很难做到 ）
 - 着眼数据的完整性，弱化单条数据精确性 
 
@@ -13,8 +13,9 @@ http://geojson.io/    可以在线查看，绘制，修改GeoJSON数据
 
 https://mapshaper.org/ 可以查看较大的geojson，还能够简化GeoJSON数据
 
-### d3
+## d3.js 
 > d3是data driven documents 数据驱动文档的缩写
+> d3 includes data and document 
 - [d3中文教程](https://blog.csdn.net/qq_34414916/article/details/80026029)
 - [d3官方教程](https://github.com/d3/d3/wiki/tutorials)
 - [d3插件](https://github.com/d3/d3-plugins)
@@ -44,8 +45,8 @@ A映射到B的一个尺度(scale)
 - %x 年月日
 - %X 时分秒 
 
- 
-
+#### d3 动画
+> d3 动画是基于插值的 
 
 
 

@@ -1,0 +1,30 @@
+
+In this video, we will learn what is D3.js and why you most probably need it.
+D3 is a JavaScript library for visualizing data using web standards. 
+D3 helps you bring data to life using SVG, canvas and HTML.
+D3 combines powerful visualization and interaction to clinks with a data-driven
+approach to your manipulation, giving you the full capabilities of modern browsers 
+and the freedom to design the right visual interface for your data. In other words,
+D3 closes the gap between the data and the visualization on the way. It calculates say a site,
+color and position, it adds interactivity and animations and it provides a set of functions
+for displaying your data into the browser. Data visualizations are made up of two parts,
+data and documents. Data is what drives the visualization, it should never be the other 
+way around. Your visualization should you present the data no matter what looks like
+or how its structured, the visual needs to be adjusted no the other way around. Now here 
+are some steps to create diagrams. First prepare and collect your data, then together we will 
+create some functions. After that begin drawing the visualizations and last but not least make 
+the user friendly by adding labels, interactivity, animations and maybe colors, shapes, sizes, 
+etc. Let's see some examples of visualization graphs. This is a bad example, why take a moment
+and look at it. It does not provide much information, the color is the sage of blue 
+and it's hard to distinguish the data based on color. This is another bad example and 
+again please check the time to take a look at it, here there is too much information and
+everything is squeezed you can barely read anything but this is a great example, 
+the visualization is based on color and size but also provides reader information. 
+You can take the data you want to see in the bottom of the diagram,
+the scale corresponds proportionally to the x and y axes. 
+   So far we covered meanings such as data visualization and D3.js,
+    we discussed about meaningful visualization as well as we saw some examples of good and bar graphs. 
+    In the next video, we won't have any more theory; instead, we're going to download our favorite 
+    text editor and be one step closer to code. See you in the next video.
+   
+
