@@ -37,7 +37,14 @@ https://mapshaper.org/ 可以查看较大的geojson，还能够简化GeoJSON数�
 > 函数F，是集合A到集合B的映射，如果A是数据域，B是图形域，函数f就是把集合
 A映射到B的一个尺度(scale)
 
+#### d3 time format 格式 
+- 星期 %a Fri %A Friday
+- 月份 %b Feb %B February
+- 几号 %d %e 01 1 
+- %x 年月日
+- %X 时分秒 
 
+ 
 
 
 

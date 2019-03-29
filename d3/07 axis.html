@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="d3@3.5.16/d3.js"></script>
+    <link rel="stylesheet" href="./main.css">
+    <title>axis</title>
+</head>
+<body>
+
+
+<!--<div id="app">-->
+
+<!--</div>-->
+<!--<div class="control-group">-->
+    <!--<button onclick="renderAll('bottom')">-->
+        <!--horizontal bottom-->
+    <!--</button>-->
+    <!--<button onclick="renderAll('top')">-->
+        <!--horizontal top-->
+    <!--</button>-->
+    <!--<button onclick="renderAll('left')">-->
+        <!--vertical left-->
+    <!--</button>-->
+    <!--<button onclick="renderAll('right')">-->
+        <!--vertical right-->
+    <!--</button>-->
+<!--</div>-->
+
+<script type="text">
+
+  var height = 800,
+    width = 500,
+    margin = 25,
+    offset = 50,
+    axisWidth = width - 2 * margin,
+    svg;
+
+
+  function createSvg() { // <-A
+    svg = d3.select("body").append("svg") // <-B
+      .attr("class", "axis") // <-C
+      .attr("width", width)
+      .attr("height", height);
+  }
+
+
+  function renderAxis(scale, i, orient) {
+    var axis = d3.svg.axis() // <-D
+      .scale(scale) // <-E
+      .orient(orient) // <-F
+      .ticks(5); // 几个刻度
+
+    svg.append("g")
+      .attr("transform", function () { // <-H
+        if (["top", "bottom"].indexOf(orient) >= 0)
+          return "translate(" + margin + "," + i * offset + ")";
+        else
+          return "translate(" + i * offset + ", " + margin + ")";
+      })
+      .call(axis); // <-I
+  }
+
+  function renderAll(orient) {
+    if (svg) svg.remove();
+
+    createSvg();
+
+    renderAxis(d3.scale.linear()
+      .domain([0, 1000])
+      .range([0, axisWidth]), 1, orient);
+
+    renderAxis(d3.scale.pow()
+      .exponent(2)
+      .domain([0, 1000])
+      .range([0, axisWidth]), 2, orient);
+
+    renderAxis(d3.scale.log()
+      .domain([0, 100])
+      .rangeRound([0, axisWidth]), 3, orient);
+
+    renderAxis(d3.time.scale()
+      .domain([new Date(2012, 0, 1), new Date()])
+      .range([0, axisWidth]), 4, orient);
+
+
+  }
+
+</script>
+
+
+<div id="axis">
+
+
+</div>
+
+<script type="text/javascript">
+  var
+    height = 500,
+    width = 500,
+    margin = 25,
+    axisWidth = width - 2 * margin;
+
+  var svg = d3.select("body").append("svg")
+    .attr("class", "axis")
+    .attr("width", width)
+    .attr("height", height);
+
+  var scale = d3.scale.linear().domain([0, 100]).range([0, axisWidth]);
+
+  var axis = d3.svg.axis()
+    .scale(scale)
+    .ticks(5)
+    .tickSubdivide(5) // <-A
+    .tickPadding(10) // <-B
+    .tickFormat(function (v) { // <-C
+      return v + "%";
+    });
+
+  svg.append("g")
+    .attr("transform", function () {
+      return "translate(" + margin + "," + margin + ")";
+    })
+    .call(axis);
+
+</script>
+
+
+</body>
+</html>

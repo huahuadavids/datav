@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>插值</title>
+    <script type="text/javascript" src="d3@3.5.16/d3.js"></script>
+</head>
+
+<h3>
+    固定函数f(x),以及在x1,x2..xn的值，现有xa，它的值在那些值之间，求f(xa)的过程叫插值
+</h3>
+
+<body>
+
+
+<script>
+  const interpolate = d3.interpolateNumber(1, 100)
+
+  // 上述和下边函数等价
+  // function interpolate(t){
+  //   return min * (1-t) + t *max;
+  // }
+  console.log(interpolate(0.1))
+</script>
+
+
+<div id="font" class="clear">
+    <span>Font Interpolation<br></span>
+</div>
+
+<script type="text/javascript">
+  var max = 11, data = [];
+
+  var sizeScale = d3.scale.linear() // <-A
+    .domain([0, max])
+    .range([  // <-B
+      "italic bold 12px/30px Georgia, serif",
+      "italic bold 120px/180px Georgia, serif"
+    ]);
+
+  for (var i = 0; i < max; ++i) {
+    data.push(i);
+  }
+
+  function render(data, scale, selector) { // <-C
+    d3.select(selector).selectAll("div.cell")
+      .data(data)
+      .enter().append("div").classed("cell", true)
+      .append("span");
+
+    d3.select(selector).selectAll("div.cell")
+      .data(data)
+      .style("display", "inline-block")
+      .select("span")
+      .style("font", function (d, i) {
+        return scale(d); // <-D
+      })
+      .text(function (d, i) {
+        return i;
+      }); // <-E
+
+    d3.select(selector).selectAll("div.cell")
+      .data(data)
+      .exit().remove();
+  }
+
+  render(data, sizeScale, "#font");
+</script>
+
+<script>
+  /**
+   * @name 自定义插值
+   */
+  d3.interpolators.push(function (a, b) { // <-A
+    var re = /^\$([0-9,.]+)$/, // <-B
+      ma, mb, f = d3.format(",.02f");
+    if ((ma = re.exec(a)) && (mb = re.exec(b))) { // <-C
+      a = parseFloat(ma[1]);
+      b = parseFloat(mb[1]) - a;  // <-D
+      return function (t) {  // <-E
+        return "$" + f(a + b * t); // <-F
+      };
+    }
+  });
+
+  d3.interpolators.push(function (a, b) { // <-G
+    var re = /^([a-z])$/, ma, mb; // <-H
+    if ((ma = re.exec(a)) && (mb = re.exec(b))) { // <-I
+      a = a.charCodeAt(0);
+      var delta = a - b.charCodeAt(0); // <-J
+      return function (t) { // <-K
+        return String.fromCharCode(Math.ceil(a - delta * t));
+      };
+    }
+  });
+</script>
+
+
+</body>
+</html>
