@@ -9,8 +9,12 @@ svg和flash，后者是公司的，基于内部dom的二进制流文件
 - rect (x y width height rx ry 是圆角)
 - circle （cx xy 是圆心位置 r) 
 - ellipse 椭圆 (cx xy rx ry)
-- polyline 折线 point="x1"
-- polygon  多边形 
+> polygon 和 polyine 是完全一样的，就是polyline不闭合
+```
+<polygon points="10,10 100,199, 120,200 130,30" stroke="red" stroke-width="3">
+
+</polygon>
+```
 - path 其他图形 
 
 ### 基本属性

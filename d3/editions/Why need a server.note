@@ -1,0 +1,59 @@
+Welcome to another video, where we learn how to set up local server with few easy steps.
+In the first coding exercises we won't need a server but later we will be loading data
+from external sources. For security reasons, most browsers won't allow you to load
+ externally data unless you are on your server, this forces us to set up a local server
+or run machines. I'm going to show you three ways to create local server,
+for the rest of this course I'll be using the last one. Let's explore WebStorm,
+XAMPP and last but not least Chrome local server. This is WebStorm,
+it's super powerful and by download it it means you two matically
+ have a local server in your machine, you don't need to add a single line of code.
+ But I'm not going to use this one as it only have a 30 days free trial and after
+  that period you have to buy a license. Let's explore the second option,
+  it's XAMPP and it's really popular among web developers,
+  you can download it for free. Sometimes the installation can be quite tricky.
+  Anyway after the installation is completed open a program called XAMPP control panel,
+   click on the Apache server, if it turns green you are ready to go,
+   if it turns red try to debug it by reading the console log errors.
+Last but not least I'm going to walk you through in how to use Google Chrome
+as a local web server, you don't need to download anything, it's free and it's very easy
+to create a static web page server using Chrome developer tools override feature.
+The local override feature can be used to create a web server to serve static web pages.
+ You can name the domain of your web server whatever you like even if the domain name already
+ exists. Chrome will serve pages from your own server if the requested page or resource exists
+ on your local server. Okay and now I'm in my desktop and folder named local server JS
+  and inside there I have another folder and this time it's called local D3.js dot-com
+  and it's really important to have the dot-com in the ends. Okay now you see an index.html
+  and style CSS files and you can create them however you like, this files are
+  currently empty and I'm going to open them with Sublime. I have my index.html and style
+   CSS files and if you're using Sublime you can just tap HTML and then click enter and
+    you'll have this. Now inside the title I'm going to type something like D3 local server
+    and after this our thing we're ready to proceed by included or linking the style
+    that CSS file which is really simple, just use your in your HEV a style dot CSS or
+     whatever is the name of your file. Alright now I think that we can save it
+  and go to our body and inside there I'm going to have an h1, h1 stands
+  for header 1 and I'm going to write the classic one which I think is hello world.
+  If you want to save your file just click on ctrl s if you're using Windows,
+  were save as if you're using Mac or Linux. And inside the style that CSS
+  I'm going to have an HTML with background color of orange and I think this is pretty simple.
+  Here you don't have to purchase it, there is no problem with it,
+  just click on console and it will be at no time. Open your browser and then right
+  click to get to that developers tools so go to inspect or control shift I if you are using
+   Windows and here you will be able to see the elements, console and sources tops and
+   these are the three tabs that we are going to use more. Now please go to sources and
+   then overrides and a local overrides and just click on it and try to locate your folder
+   and even the outer folder so for me this is local server j/s. Inside there you will
+   be able to see the local D3.js calm but please click on the outer that ok and now in
+    the upper part of your browser you will see just a third message, you don't have to do
+    anything about it just like hola and it will be fine. Right now in your left panel
+    you will see your folder and for me this is a local server j/s, click on it and
+    you will see the local D3.js dot com. Once again click on it and you have finally
+    your two files, the index.html and style.css. These files will be opened in the sources
+    our category and you will be able to see them or even change them or edit them.
+    And firstly let's type our address and for me this is local D3.js .com and here
+    is our local server alright. Now let's continue with the tricks I just mentioned
+    and the first one will be changing the color all right. Click on the color and now
+    play with this bar here and you can leave it however you like it, let's say that I like this green color so if you see these asterisks it mean it's not saved but by clicking ctrl as you will save it. Now let's see another example with index food HTML
+    and I'm going to hello world and I'm going to add an exclamation mark. Now you don't see the result but you have to reload it and then you will be able to see the exclamation mark, isn't it cool. Go back to your text editor and see the changes both to their CSS and in the HTML file. This was our mini tutorial ona high to make your own local server and this is very important so I hope that you have understanded that process.
+    So far we covered meaning such as what is data visualization and what is D3.js, then we saw some examples of good and bad visualizations. In the previous video we covered the topic of text editors and in this video we talked about local servers. Coming up in the next section we will be talking about SVG,
+
+stay tuned and thank you for watching.
