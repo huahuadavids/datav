@@ -1,0 +1,31 @@
+In this video, we are going to talk about the classed and styled methods, open up your text editor. 
+
+Among the other things in the last video we were talking about attributes,
+
+ what will happen if I want to add another attribute. Take a moment and think about it.
+
+ So far I have an attribute, class, class name and so now I'm going to add class name 2. 
+
+I'm going to save and then refresh my website and see the results. 
+
+I'm going to the first tab and here I can say that in the P I have only this second classes name. 
+
+Well the attribute method removed the original value and replaced it with a new one.
+
+Okay let's go back to our text editor and comment the attributes, 
+
+there has to be a solution for that right. Again take a moment and think about it.
+
+ Well there is actually in solution and it's called the classed. So the classed is another method that takes again two values, the first value is the name like class name or class name 2 and the second parameter is a value true or false,
+ so with the class method you can add or remove classes. 
+
+If you give true then you will add and if you give false you will remove the class.
+
+ I'm going to save and again refresh. All right now I can save it I have both of my classes, class name one and class name 2.
+ Let's go back to our text editor and this time I'm going to give another value, this is going to be this style. 
+
+So style is something like in style in HTML. Style takes again two parameters, the first one for me let's say it's color and the next one is going to be orange. This is going to make my text caller orange and you can see this in the P, 
+
+again I have the classes and the inline style. In the console dot log I can see everything so how the class and class name 2. 
+
+I would advise you to take some time and actually practice by yourself. So far we learn how to prepare our files and this files are usually going to be an HTML, CSS and JavaScript run. Then we explored what is data in D3.js, we saw a lot of methods like the Select, appends attributes and some more special like the text. Last but not least we saw the classed and styled methods but what coming up is way more excited and I'm only going to give you hints. First we're going to see more methods like the data and enter one and then we are going to learn about functions and how you can easily use them and last but not least, we are going to learn how to load data from external sources. I hope you are as excited as I am for the fifth section which is joining data in D3.js version 5. Thank you for watching.

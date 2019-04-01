@@ -1,1 +1,38 @@
-In this video we're going to talk about the select method. If you haven't done already open up your text editor. I'm going to pop the codes in the JavaScript file I've created in the first video of this section. The script tags in D3.js provides you with an object, usually the first thing you want to do is to select an element. To do that is very simple, you have D3 dot select parentheses and inside their quotes. You can select an ID with a hashtag and the name of it or a class with the dot or even an HTML element like a header, a paragraph, a div or maybe even a body and the body is actually what we are going to use for this example as there is already something in the HTML code. So save and then refresh your website and let's go to see what we have. So in the app JS file you will see the D3 dot select and then body. What I want you to do now is to go to console and if you'd like you can clear your console, then hit console dot log and inside the parentheses I'm going to write an el, el stands for element. So right now let's go back to our text editor and create a variable el which will be equal to D3 dot select body. Save and refresh your websites. Again you can clear the console and your console dot log will stay there. Open up your arrow and actually really open top until the last part. So you have your groups, array 1 and then your body, you can go really down and see everything that D3 has created it for you. So we didn't make anything but D3 has created everything. You can see we have the links and inside the body. If you click on body you can actually see of the body so this is a fast way to alternate between your data and your HTML elements. The selection library is a way to select and change HTML elements. We studied this section by creating our HTML, CSS and JavaScript file then we talked about data and data more specifically in D3.js and in this video we talked about the select methods. Stay tuned for the next video is the appends method.
+In this video we're going to talk about the select method.
+
+ If you haven't done already open up your text editor.
+
+ I'm going to pop the codes in the JavaScript file 
+
+I've created in the first video of this section. 
+
+The script tags in D3.js provides you with an object, 
+
+usually the first thing you want to do is to select an element. 
+
+To do that is very simple, you have D3 dot select parentheses and inside their quotes.
+
+ You can select an ID with a hashtag 
+and the name of it or a class with the dot or even an HTML element like a header, a paragraph, a div or maybe even a body and the body is actually what we are going to use for this example as there is already something in the HTML code.
+
+ So save and then refresh your website and let's go to see what we have. So in the app JS file you will see the D3 dot select and then body.
+
+ What I want you to do now is to go to console and if you'd like you can clear your console, 
+
+then hit console dot log and inside the parentheses I'm going to write an el, el stands for element. 
+
+So right now let's go back to our text editor and create a variable el which will be equal to D3 dot select body.
+
+ Save and refresh your websites. 
+
+Again you can clear the console and your console dot log will stay there. 
+
+Open up your arrow and actually really open top until the last part. So you have your groups, array 1 and then your body, 
+
+you can go really down and see everything that D3 has created it for you. 
+
+So we didn't make anything but D3 has created everything. 
+
+You can see we have the links and inside the body. If you click on body you can actually see of the body so this is a fast way to alternate between your data and your HTML elements. 
+
+The selection library is a way to select and change HTML elements. We studied this section by creating our HTML, CSS and JavaScript file then we talked about data and data more specifically in D3.js and in this video we talked about the select methods. Stay tuned for the next video is the appends method.

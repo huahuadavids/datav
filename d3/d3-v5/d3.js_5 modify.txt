@@ -1,0 +1,41 @@
+I hope you are excited as in this video we are going to talk about modifying elements. Right now I'm in D3 and more specifically in GitHub.com D3 + D3 dot selection. 
+
+
+We've already covered the selection part so I'm just going to skip this, 
+
+that's right now we are looking for the modified Tran and here it is the modifying elements.
+
+ The first thing that you are going to see is after selecting elements is the selection transformation methods to affect document content,
+
+ for example to set the name attribute and color style of an anchor element, you have to use the select H root and style. 
+
+Okay first let's go to the HTML file and actually delete the p tag, save it and then go back to your app JS file.
+
+ This time we will call the attribute method almost in the same way as we did with the SVG. 
+
+This attribute will apply to the paragraph tag and has two parameters which are the name of the attribute and a value.
+
+ The most common attribute you will be adding is the class and second parameter is optional but we usually set it. I'm going to set it as a class name and right after that I'm also going to add another method called text and inside the quotes I'm going to help they see the text. 
+
+Save it and then go back to your website, refresh it and let's see the result this time.
+
+ So for me this is a text but maybe you gave something else so you will see a different text.
+
+ All right let's go to the console, if you open up the arrow again you will see the groups, array and this time in the P you will have a class name or another name of your class. 
+
+
+Let's minimize this window and go back to our text editor. I'm going to format my methods, 
+
+this is optional and you don't actually have to do it but it is my preferred way of working. 
+
+I want you to mention a few things before we end with this video. 
+
+The attribute and text methods are called transformation methods 
+
+and they are quite different than the append and select message.
+
+ Attribute and text will affect how an element will appear in the page, 
+
+they will only work if you apply to the selection you made previously so another thing to keep in mind is that the order matters so you should have a select append attribute and last but not least a text method.
+
+ So far we created our files and they were in HTML, CSS and the JavaScript run, right after that we learn what is data and more specifically what is data in D3.js. Then we learn our first methods and this were the select and append, and in this video we talked about how to modify elements using the attributes and the text methods. In the next video we're going to talk about the class and style but also the last video is going to be the last one for the fourth section. I hope you're excited and ready to learn more cool things, see you in the next one.

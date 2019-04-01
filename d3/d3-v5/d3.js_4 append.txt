@@ -1,0 +1,31 @@
+I hope you are excited as in this video we are going to talk about the append method.
+
+ If you can recall in the previous video we saw the select methods
+
+ but now I think it's time to open up your text editor and continue with append. 
+
+I want to show you how to add elements. 
+
+After you select an element he usually want to add it on it, 
+
+you can do this very simple by using the appends method.
+
+ So right now I'm going to have an append be.
+
+ Save and go to your HTML file. Right after the script tags I'm going to have a p tag, open it and closing run. Inside there you can write whatever you like but I'm going to stick with this is a paragraph. 
+
+Save and then go to your browser, refresh your website and you will see that this is a paragraph. 
+
+Go to the console tab and again hits console dot log e. Open your arm and there you will find that you now have a P instead of a body. 
+
+D3 takes care of that so instead of showing you the body it will simply show you the P which is the one that you have appointed to. 
+
+The append function does two things, 
+
+it's creating an element and then articles into the current selection, 
+
+in this case it would be the body tag.
+
+ The idea of calling one function after the other is called the chain methods, we will be using a lot of chains so it would be nice if you get here streets.
+
+ You don't have to use a change but this is an example of it. I don't think that it's necessary to give it like this so I'm actually going back as it was before that. At the beginning of this section we created our first files and this were in HTML, CSS add a JavaScript file. Right after that we learned what is data specifically in D3.js and we continued with methods select and append. In the next video, we are going to see how to modify elements. Thank you very much for watching and see you in the next video.

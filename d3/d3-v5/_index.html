@@ -17,7 +17,13 @@
 
 <script src="../d3@5.9.0/d3.js"></script>
 <script>
-  d3.select("#app").text("hello world")
+  const el = d3.select("body").append("p")
+
+  el.attr("class", "className").text("huahua")
+
+  el.classed("hua-h2", true)
+  el.classed("hua-h1", true)
+  el.style("color", "green")
 
 </script>
 </body>

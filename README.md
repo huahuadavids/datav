@@ -26,6 +26,24 @@ https://mapshaper.org/ 可以查看较大的geojson，还能够简化GeoJSON数�
 - json
 - csv 
 
+
+#### basic 
+```
+// append 插入元素，并改变指向到当前元素 
+const el = d3.select("body").append("p")
+
+// 操作属性 attr 会覆盖掉老的attr 
+const el = d3.select("body").append("p")
+el.attr("class", "className").text("huahua")
+
+// 样式操作 true代表add，false代表删除 
+el.classed("hua-h2", true)
+el.classed("hua-h1", true)
+el.style("color", "green")
+
+```
+
+
 #### d3把数据和图形关联的模式叫做 enter-update-exit 模式 ，
 - 如数据领域a（数据）和图形领域b（图形）的交集 A∩B ，我们用selection.data(data) 表示这个交集 ，函数的返回值
 表示绑定了数据的D3对象集合，我们就可以处理新集合，这个新集合的状态叫做更新（update mode）状态,
