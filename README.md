@@ -16,10 +16,15 @@ https://mapshaper.org/ 可以查看较大的geojson，还能够简化GeoJSON数�
 ## d3.js 
 > d3是data driven documents 数据驱动文档的缩写
 > d3 includes data and document 
+> d3 是一个数学js库，比较底层 
 - [d3中文教程](https://blog.csdn.net/qq_34414916/article/details/80026029)
 - [d3官方教程](https://github.com/d3/d3/wiki/tutorials)
 - [d3插件](https://github.com/d3/d3-plugins)
 
+#### d3中数据来源 
+- txt
+- json
+- csv 
 
 #### d3把数据和图形关联的模式叫做 enter-update-exit 模式 ，
 - 如数据领域a（数据）和图形领域b（图形）的交集 A∩B ，我们用selection.data(data) 表示这个交集 ，函数的返回值

@@ -1,0 +1,36 @@
+Hello and welcome to the fourth section, selecting elements in D3.js. 
+
+In this section we are going to write our first D3.js version 5 codes. 
+
+We will set up our working environment, 
+
+understand what is data and is the most common methods like select and append to select and modify elements, 
+
+are you ready for this then open up your text editor.
+
+ In the text editor I have three files, 
+
+index.html, app and style dot CSS and these are located in local D3.js comm. 
+
+Now in the index.html file I'm going to have my basic structure, this is only an HTML and inside the header I'm going to have a title, you can give it whatever you like. 
+
+In the meta tag I'm going to have a car set with utf-8 and after the title I'm also going to add a link for our style dot CSS file.
+
+ Now let's go to body. Inside the body we are going to have two script tags, 
+
+the first run is going to link between our HTML and the app dot JS file, so far the app dot JS file is empty. 
+
+In the next line I'm going to have another script and this script is going to link our HTML file with the D3. 
+
+I'm going to leave the link for this page so you will be able to find it. 
+
+
+Now go to the installing section and there you can find the script, it's very simple, it's only half src.
+
+ There is another case that you can use the minified version but you're not going to do that so I'm just going to copy and then paste these scripts for the GitHub page,
+
+ so go back to your text editor and just paste it here. Alright we have the version 5 and now I'm going to save and then I'm going back to my browser.
+
+ As you can see I have not refreshed my site but I'm going to do it right now. Ok and now you have an index and inside there I'm able to see all the things that we have added but also that my other files are quite empty, 
+
+I hope you are excited and ready to fill everything in the next video. So far we prepared our files, between HTML, an app JS and a style dot CSS file, we didn't drink much, just on the HTML file. But coming up is data in D3.js, we will understand them and we will learn why you have to use them. Stay tuned for the next video, what is data.

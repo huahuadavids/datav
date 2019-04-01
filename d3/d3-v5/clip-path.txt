@@ -1,0 +1,35 @@
+This is going to be the last dedicated video to SVG and since we learned so many things, 
+it's time to have some fun. Right, well let's do this with clay paths. If you haven't already open your text editor and comment out our previous code then add a new comment for our new codes, for me this is probably going to be something like clay paths or even text paths.
+
+ Then I'm going to make some text paths, I'm also going to use the method we saw in the previous video which is with depths. After that create your text.
+
+ In the text element add whatever text you may like but before that make sure that you also add your x and y properties, 
+
+I'm going to give them a value of 100 
+
+and then the stroke and maybe a font size This stroke is going to be red 
+
+and the font size is going to be 25. 
+
+My text will be a similar one, something like hello world.
+
+ Well after that I'm ready to continue with the devs or the definition. 
+Inside them are the paths element to create custom shapes. Inside the path add an ID with some data,
+ the ID will have a cuss text paths or a custom text path identification,
+ ID stands for identification and after that don't forget to add your D and D stands for data and
+
+ then we have some comments. The first comment is M which is for move and 1/2 set it to 0 and 0 and then an line which is 250 and 250.
+
+ Go back again to your text and add a text path. 
+
+
+Inside the text path this time I'm going to add the hello world. And the last thing that we have to do is drag inside the text path our X link and in the x link I'm going to have also an HF and inside this HF I'm going to use the hashtag and the costume text path. 
+
+After doing that save and refresh your website. 
+
+As simple as that you can define the path and then you can apply it to your text using the text path elements.
+
+ So far we learned so many things in section 2 and section 3 about SVGs. We started with some simple shapes but then we created some work complex one like polygons, polylines, paths, text, text paths and even clip paths in this last one. What's coming next is way more excited. We're going to learn about D3.js. First, we're going to start with data and then we're going to continue with several methods like select, 
+append and class. 
+
+Stay tuned as the next section is going to be a key one. Thank you for watching.

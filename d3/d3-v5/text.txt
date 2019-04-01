@@ -1,0 +1,20 @@
+n this video, we are going to talk about texts. 
+Texts are treated as vectors which is quite great.
+ If you haven't already open the text editor
+ and comment at our previous exercises as well as 
+add a new comment. To create text you simply have to use the text element, this element has nor required attributes. You can add your text between the closing and opening tag just like using any other HTML. 
+
+He can write whatever you may like, I'm going to write have a nice day then save and refresh.
+ You cannot see anything can you although we have our code in here. Well let's go back to our text editor, 
+
+this is because we haven't added our X&Y coordinates.
+
+ I'm going to add both of them to 40 then save and should press, see now have our text and let's go back to the text editor. 
+To change the font color we will use the field property and to change the font size, we'll use the font size property, so save refresh and let's see the result once again. 
+
+Alright, it's time to continue with something a bit more interesting. So far we only wrote some words but what about multi-line text. Well for multi-line you have to set the coordinates it's time. Inside the text is the T span, this element will inherit text classes so feel and font size will be the same.
+
+ After that add your x and y points and add your text, for me this is just a hello to you too. 
+Alright I think that I'm happy with it but I'm going to show you one last trick and this is about making your text clickable. 
+
+Just before and after the text element add an anchor tag with a, inside there have an H ref which will be for me will redirect to Google and a target to blank so our page will open in a new blank page. In the beginning of a write also an x-linked, save and refresh. Now hover over your text, you will see that you have your hand tool, click or have a nice day. If you followed along with me a new page stood open. That was it for text, I have couple of more things that I want to show you before we will continue with D3. Make sure to practice and then keep watching. So far play chords polygons and polylines, paths and pegs but stitching because next video is going to be about text paths see you in the next one.

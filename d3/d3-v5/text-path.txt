@@ -1,0 +1,25 @@
+And in this video, I'm going to talk about text paths. Definitions allow you to create reusable elements, the benefit is that you won't have to input the same values justify an advance and your site. 
+
+Any element defined inside definition will not be displayed, you have to use the use element and passing the ID of the definition in order to display it, 
+
+so let's jump into the text editor. As always first I'm going to comment out our previous exercises and then to keep my coat clean I'm going to add a new comment 
+
+and this will be definitions. Inside there I'm going to create an element depths, you don't need any attribute here. Inside the tags add your shapes, I'm going to keep things simple and that the rectangle as we did in the second section of this course. 
+
+I'll have width, height, x and y, the width and height is going to be 40, 
+whereas the x and y are going to be set in zero.
+ Where this special here is that in order to view it you have to use an ID, this ID is going to work as an anchor for the use element. 
+
+So I made an ID and I named it as a rectangle, now let's also add the use element.
+
+ To do that you'll need use and inside there also an x-linked with H ref, a hashtag with your ID which for me is rectangle.
+
+ I'm also going to add the x and y properties and set them also to 0. 
+
+After that save and refresh and you will be able to see your site, for me this is just a black rectangle.
+
+ We can also view the code in this last part right here but this is something that we could view even in the second section so there has to be something more right, and you're correct. As I stated in the beginning of this video depths are usable so you can use them as many times as we want to,
+
+ I'm just going to copy and paste the use element and then change the x and y properties. You can do them whatever you like, I'm just going to keep them in 140 and then I'm also going to add a fill with a color of let's say blue and this is just to differentiate the two rectangles.
+
+ Save and refresh and now you're able to see your two rectangles. So instead of writing everything twice you can just use the element years and inside there define the X, Y and maybe color. So far we have created polygons, polylines, paths, text and text paths. In the next video, which is going to be the last one for this section, we are going to create clip paths. Stay tuned and thank you for watching.

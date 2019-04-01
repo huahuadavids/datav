@@ -1,0 +1,15 @@
+Hello and welcome back. In this video, we will talk about data.
+
+ So far we saw the data can be anything, they can be images, audio, text, even video, 
+
+literally anything but let's see more specifically what is data in D3.js. 
+
+So data can be only two things, text and numbers and data in D3 can come from four sources. 
+
+These are the hard coded data that we can insert them into our JavaScript files 
+
+and this is how we are going to start, or we can place data in text files also known as txt or JSON files which are JavaScript objects and last but not least spreadsheets known as CSV. 
+
+Data by itself can do anything but if you combine data with a visual part which is HTML and CSS we can create something that the user can understands hence the phrase data visualization. 
+
+D3 is the library that combines data with a visual part. So far we talked about the files and then what is data in D3.js but coming up in the next few videos we will focus on making elements appear in to the page in D3 style. Stay tuned for the next video where we will cover the Select methods.
