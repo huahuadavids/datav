@@ -1,0 +1,40 @@
+Hello. In this video, we are going to talk about adding a label and labels accommodate the graphs 
+and displays the data to the user. So let's go back to the text editor and make our graph a little bit prettier.
+
+ First I'm going to add a comment in order to have my codes a little bit more organized and this comment is going to say adding labels. 
+
+Now I'm going to call the function select all and pass inside there the text, 
+
+also going to have the message of data with data and of course we have to add the Ender.
+
+ Right after that I'm going to have the append and inside the append I'm going to have the text. 
+The last thing that we need is the text function so this is going to check as an input T and also return DT. 
+
+Now for the labels I'm also going to need to have some x and y attributes as this are the coordinates and every text needs also to have its own coordinates. 
+
+I'm going to show you how it will look like just by copying and pasting our previous code but as you can see it's quite on the left and I don't really like that.
+
+ Let's go back to the text editor and try to fix that. I'm going to play here with values and I'm also going to give some random values and 
+then again we are going to see the results. 
+
+Maybe it's something that we like, maybe it's something that you don't really like, you can give your own range of values. 
+
+For me these are going to be 5 for the X and 15 for y. I'm also going to add an attribute to change a little bit the font size, 
+
+I think that I like something bigger so I'm going to have it as a font size and then maybe 15 is going to be okay or maybe even 16, 16 is referring to pixels.
+
+ I'm going to have another attribute and this time it's going to be 4 colors so for color I'm going to use the and then I'm going to choose white. 
+All right now I think the time is just save and go back to the website and just present.
+ As you can see it's a little bit better, it's inside the rectangles but again I want it to be in the middle and it continues to be on the left. 
+
+In order to do that we have to use some maps. I'm going to show you how to do that for the x coordinates and this is something pretty much standard. 
+
+So although you can play with the random values because you have every time also random data and not hard-coded you can have a specific value so you have to use some mods.
+ The first part will determine the x position that will align the text to the rectangle,
+
+ the second part will determine half of the weight of the bar which will be added on the x position making the text align to the center.
+
+ So last but not least the last line for this code is going to be another attribute and this is going to be the text anchor which will make our text to go in the middle, of course if we just added the property middle. 
+And that was the last line so save and refresh. Now everything should be working out beautifully and as you can see our text or our label is in the middle of our bar graph. We started this section with a basic structure of a bar chart but then we continue with randomizing the data and optimizing the code. 
+
+In the last couple of videos or so high to reverse the bars and so last but not least how to add labels to the bars. We're going to learn another type of graphs and this is going to be the scatter plot. So so far we saw the bar chart, in the next section we are going to see the scatter plot and also some more advanced techniques in arrays data and functions. See you in the next section.

@@ -1,0 +1,25 @@
+Hello. In this video, we're going to talk about functions inside of methods, 
+
+if you're ready then just open up your text editor.
+
+ Let's start by making the text a little bit more dynamic, so we will need the select all, data, under, appends but now let's change the text method. 
+
+Inside the parentheses I'm going to delete it and actually add a function so we will replace the text with a function and the function is going to take a parameter. 
+
+A usual name for the parameter is D so the number that is big by ticks is passed into the function. 
+
+Inside there I'm also going to have a return and the return is going to say this is a paragraph 
+
+and then I'm going to add the D, the D corresponds to the datasets.
+
+ Right now I think that we are ready to save and then refresh and check if our result is truly correct.
+
+ So yes as far as we can see you have this is a paragraph and then the values but I think that it would be extra prettier if we added a space here and then also add another function which is called the style.
+
+ Now this style one as you will see can be made with several different ways but I'm going to show you the one that I like the most and I think that it is the easier.
+
+ So I'm going to first have a color and then a function and this function again I'm going to have the parameter and this time is also going to be D. 
+
+But now I'm going to have an if-else statements and the first parameter in the if statement is going to be a D or the data and I'm just going to make it less than 15, I have 5, 10, 15, 20 and 25. So then I'm going to turn a color and I just pick the orange one and I'm going to do the same thing for the else but this time I'm going to add the grain. 
+
+Just save and then refresh and this time you are going to see that you are five paragraphs are going to have different colors. Can you guess what this color is going to be and how this is going to be, well let's just check it out. If your code is the same as mine then you should see your first two paragraphs being colored with the orange one, whereas the three less are going to be in a gray color and the same thing is visible also in the elements tab, and this was our code for this video. So far we learned about data binding and the methods data and enter. In this video we talked about functions in methods, stay tuned for the next video how to load data from external sources.

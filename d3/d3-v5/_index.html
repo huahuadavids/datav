@@ -5,26 +5,71 @@
   <title>hello d3.js</title>
 </head>
 <body>
+
 <style>
-  *{
-    padding:0;
-    margin:0;
+  * {
+    padding: 0;
+    margin: 0;
   }
 </style>
 
-<div id="app"></div>
+<div id="app">
+
+</div>
+
+<p></p>
+<p></p>
+<p></p>
 
 
 <script src="../d3@5.9.0/d3.js"></script>
 <script>
-  const el = d3.select("body").append("p")
 
-  el.attr("class", "className").text("huahua")
+  const dataset = [10, 15, 20, 25, 30];
 
-  el.classed("hua-h2", true)
-  el.classed("hua-h1", true)
-  el.style("color", "green")
+  function render(){
+    const el = d3.select("body").selectAll("p").data(dataset).enter()
+
+    el.append("p");
+
+    d3.select("body").selectAll("p").data(dataset).attr("class", 'huahua').
+    text(function (d) {
+      return "this is p + " + d;
+    }).style('color', function(d){
+      return d < 20 ? 'red' : 'blue'
+    })
+
+    d3.select("body").selectAll("p").data(dataset).exit().remove();
+  }
+
+  render()
+
+
+  // setInterval( () => {
+  //   dataset.push(11)
+  //   render()
+  // }, 1000)
 
 </script>
+
+<script>
+
+  // d3.text("./path.txt").then(function(text) {
+  //   console.log(text); // Hello, world!
+  // });
+
+  // d3.csv("./demo.csv").then(function(data) {
+  //   console.log(data); // [{"Hello": "world"}, …]
+  // });
+
+  d3.json("./demo.json").then(function(data){
+    console.log(data)
+  })
+
+</script>
+
+
+
+
 </body>
 </html>

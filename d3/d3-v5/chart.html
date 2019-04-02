@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>chart</title>
+</head>
+<body>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  #app {
+    width: 1000px;
+    height: 400px;
+    background: orange;
+    margin: 10px auto;
+  }
+
+  .bar {
+    width: 100px;
+    height: 120px;
+    background: grey;
+    display: inline-block;
+    margin-right: 20px;
+  }
+</style>
+
+<div id="app">
+
+</div>
+
+<script src="../d3@5.9.0/d3.js"></script>
+<script>
+  let data = [], $width = 800, $height = 400, $padding = 5;
+
+  for (var a = 0; a < 20; a++) {
+    data.push(
+      Math.floor(
+        d3.randomUniform(1, 60)()
+      )
+    )
+  }
+
+  var svg = d3.select("#app").append("svg").attr("width", $width).attr("height", $height)
+
+
+  svg.selectAll("rect").data(data).enter().append("rect")
+    .attr("width", $width / data.length - $padding).attr("height", function (d) {
+    return d * 4
+  })
+    .attr("y", function(d){
+      return $height - 4*d;
+    }).attr("x", function (d, i) {
+    return i * ($width / data.length)
+  })
+
+
+  svg.selectAll("text").data(data).enter().append("text").
+  text(function(d){
+    return d
+  }).
+  attr("y", function(d){
+    return $height - 4*d  +  15
+  }).attr("x", function (d, i) {
+    return i * ($width / data.length)  + ($width/data.length - $padding)/2
+  }).attr('fill' ,'white').attr("font-size" , '16px').attr("text-anchor", 'middle')
+
+
+</script>
+</body>
+</html>

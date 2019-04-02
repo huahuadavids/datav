@@ -1,0 +1,46 @@
+Welcome to the sixth section, creating a bar graph.
+
+ In this section we will start with a bar graph and as we progress we look at a more complex and dynamic SVG bar graph. 
+
+You started your visualization journey by learning SVG, then continue with displaying, selecting and binding data. 
+
+What's coming now is visualizing the data with bar graph and applying the methods and the tricks you learned along the way. 
+
+Open up your text editor. In the HTML file I have the script with the D3.js changes and the app dot js and 
+
+then a bar chart inside the div. So let's go to the style and here I have the bar chart with width, height, a background color and a margin. 
+Alright the last file is the app JS and as you can see I have very simple created an array with some numbers like 10, 50, 20, 25 and 30.
+
+
+ So now it's time to go back to the HTML file and inside the div create another div but this time I'm going to add a class and the name of this class is going to be bar.
+
+ We have to give some style in this bar so I'm going back to the style and this time I'm going to have a display with a property of inline block.
+
+ Then I'm going to continue with a width and let's say I'm going to have 100 pixels then a height of 100 pixels and maybe 120, 
+
+yeah why not and last but not least I'm going to have a background color grey alright. So let's go back to the browser and repress it. Here there is one small problem, can you find it. Take a moment and look at your elements, is everything correct, well let's see install that CSS. Here we are missing in the width and height something, can you guess what it is all. Right let him tell you that we are missing the pixels and if you add it and then hit save you will see a big difference. If you want you can keep it like this and I think that I'm going back to the CSS file to make also this one change. All right so let's add the pixels and then our style file will be ready. 
+
+
+Okay back to the HTML and this time I'm actually going to delete the class bar because we want to do everything in D3.js way and this is not a D3. 
+
+So I'm going to delete this, I'm going to save this file and then I'm going to app js. 
+
+Now I'm going to add the select method and then inside the select method I'm going to need the bar chart. 
+
+Okay right after that I'm also going to need another method which is the select all and inside there I'm going to add the div.
+
+ After that I'm going to have the data and again I'm going to have the data and of course don't forget the answer methods all right.
+
+ So we are going to the end but before that I will need the append to add the div and slots but no place and not to meet with a class and then the class will be at the bar.
+
+ So before we had it this in HTML but now we do it's in a D3 way so I'm adding in these to app.js. 
+
+Just go back and refresh and then you will see everything a little bit more clear. So in the element tab you can open the arrow and then you will see all your bars. So here you have your five bars or at least if you follow my example then you should have five bars.
+
+ Okay and now I have a question for you, how can you make the bars click a little different and I will give you a hint, what about the style and height properties. Take a minute and then go back to the text editor and try to find a solution.
+
+ Okay did you do it, well let me show you my solution too. I'm going to add a style with a height and then I'm also going to need one more thing and this is a function.
+
+ So then inside the function I'm going to have a div and this function is going to return the div with the pixels. 
+
+So if you did that then well done congratulations but if you didn't that's okay, that's why you're here and this is to learn. So just save and refresh and go back to the website and now you should be able to be this difference in the bars. So far you learned the basic structure of a bar chart, stay tuned as you're going to learn even more about how to make a way better graph. See you in the next video where we will be talking about the upside-down SVG.

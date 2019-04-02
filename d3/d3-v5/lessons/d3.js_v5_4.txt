@@ -1,0 +1,19 @@
+Welcome to the last video of this section when we are going to learn how to write data from JSON files. 
+
+If you recall in the previous video, we learn how to write data by using CSV files but the most common way to add data is by using JSON files. 
+
+So first, I'm going to comment the call to the generate function, to make a request to a JSON file we use the D3 object and just call the JSON method. 
+
+This method has the same parameters as before, you will need the URL to the JSON file which in my case is going to be data dot JSON. So now I have created a file called data dot JSON 
+
+and you can simply do the same thing. Inside the JSON file I have added the values 10, 15, 20, 25 and 30 so right after that just save and go back to your app the js file. 
+
+Now we have to create the promise for this method and this is going to be with the then. So inside then I'm going to have a function and again this function is going to have data. 
+
+So it's pretty much the same as it was in this CSV file and I'm going to console dot log gets a data. Right after that again I'm going to need the generated function and that's why I actually didn't delete it. So I want to pass the data to the generated function which will create our elements, 
+
+then I'm going to comment out that CSV and I'm going to save and refresh our website. If you followed my code then you should have an array with five values. So now let's go to the network tab and again you should be able to be the data dot JSON file,
+
+ if you don't see this file then just refresh your websites. And that was all about the JSON method, it is up to you to consider using either the JSON or the CSV file although I have to warn you that in most cases JSON file will be used. So far we talked about data binding and then we saw the methods, data and enter. Then we continue with function inside of methods 
+
+and last but not least we saw how to load data from external sources like CSV and JSON. So in the next few sections we are actually going to create our graphs like the bar, the chart and a loads load more. Stay tuned and see you in the next section where we are going to create a bar graph.

@@ -1,0 +1,32 @@
+In this video, we are going to talk about reversing the bar, and if you remember in the last video we saw the bar and it was actually upside down so we said that we have to change it right. 
+
+Before we do that we are going to optimize our code a little bit more and then I'm going to show you a way on how to reverse your bar. 
+
+So let's go back to the text editor.
+
+ A good practice for optimizing your code is creating variables and that's what I'm going to do for the width, 
+the height and also the padding. 
+
+So the first variable is going to be a bar chart with equals to 800 pixels and the second one a bar chart with height 400 pixels and last but not least I'm going to add the 5 and the name of this variable is going to be bar padding assigned to 5. 
+
+
+Then add the VAR keyword for variable and your variables are going to be ready. Don't forget to add actually the variables into your code so you won't need any heart cards 
+
+and also this is going to make your code be a little bit faster. 
+
+So now I have also changed the value of 1000 to 800 but this is going to work fine. Now let's just change also the padding here and then I'm going to save and refresh my website. 
+
+As you can see the bar graph is okay so I can continue with the rest of that codes. 
+
+Usually the bars go from bottom to top or from left right.
+
+ The x-coordinate goes from left to right and the y-coordinate goes from top to bottom 
+
+but that's the exactly opposite from what we actually want. So I'm going to change the Y attribute and add a function with the D parameter which will return the bar chart types minus D and multiplied by 5. 
+
+The bar chart height will make the bars go completely out of the screen so the last thing that you are going to do is to multiply by five and I'm going to do the same thing in the attribute of the height.
+
+ So to make it a little bit more beautiful I'm also going to add the attribute of filled with grey as it's in the style dot CSS. 
+
+So right after that refresh your website and now you can probably see the problem, the problem isn't with bars but the height install dot CSS isn't the correct one, it should be 400 pixels as I have edited in up to tjs. So right after that everything will be fine. This section started with a basic structure of a bar chart but then we continue with the randomizing the data and optimizing the codes and now in this video we saw a way to reverse the bar graph. 
+In the next video which is going to be the last one for this section I'm going to show you how to add a label. Stay tuned and see you in the next video.

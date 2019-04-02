@@ -1,0 +1,44 @@
+Hello. In this video, we are going to talk about external sources and more specifically how to load data from external sources using CSV. 
+
+So far we've been hurt coding our data inside JavaScript, for example dataset is a static variable with predefined values like 5, 10, 15, etc.
+
+ In real-world problems this is not usually the case, you'll have to create data either from your site or from your client sites, 
+
+D3 provides several ways to do that. We will explore one of the easiest and effective ways to make requests in order to collect the data from your own or your clients sites and this is done with fetch. 
+
+In the sources section I have provided a link to visit GitHub and learn more about fetch.
+
+ You don't have to add anything to your HTML file as long as you have adds the D3.js link. The installation is pretty simple as long as you have the D3.js link already in your HTML file so let's go back to our code. 
+
+There are three supported formats and these are text, CSV and JSON. We're not going to talk about the text so let's go to the CSV and I have already created a data dot CSV file and inside there I'm going to save the same numbers as I had in the dataset.
+
+ CSV stands for Comma Separated Values and is just a file with values separated by commas. Now I'm going back to the app j/s and this time I'm going to add this file. 
+
+So what you have to do is to call a method from the D3 library and this is D3 dot CSV and then open and close the parentheses and inside there as your file, for me this file is data dot CSV.
+
+ This will return a promise. I will change that then and pass an anonymous function so you'll have then, 
+
+function and then your parentheses and we will fill the parentheses in a beat. 
+
+Just first I'm going to have a console dot log and again inside the parentheses I'm going to have their data.
+
+ Alright just save and refresh, go back to your website and let just view the results. From the developer tools go to the network tab, the network tab keeps track of what files are loaded into the page into your own custom requests. 
+
+You may need to refresh the page to see the requests.
+ So if you click on the H our top, this is the one that you're interested in, if you see your file then you did everything correct. You can even click on the response tab to view your values but that's something that we are going to do later. 
+
+Okay so now let's go back to our text editor and add some more things to make it even more dynamically. 
+
+So I will create a function and this function will include all the code except the CSV file. 
+
+So as you can see I have named this function generate and it will be closed in the end of our code.
+
+ So let's include everything ok and now let's just check if everything is correct and 
+
+yes our function does include everything. So our next step is to go back to the D3 CSV function and call the generate function. Inside the parentheses I'm going to add data and then I'm also going to have few more things like in the function with the vendor function, again I have to call the data.
+
+ And let's just refresh to check if everything is working out fine and yes I can see that one through four all our values are clear. So one last thing is that I'm going to add the columns in the generative.
+
+ So I have function generated and then data columns, comment the VAR datasets and add it as a parameter in the function then save and refresh. CSV file is treating the values as an array meaning that it's like having columns and rows. 
+
+In this case I have only one row because everything is in the same line but I have five columns, the way to display them is based using data columns. If I had multiple lines then I would have an array with objects, the object would include Keeper values and I would have rows and columns. And we just finished with adding all the code that we needed for loading external data using CSV files, it wasn't so hard right. So far is so high to do the data binding and then we continued with methods data and under. In this video we talked about the external data and how to load them and more specifically we talked about the CSV. Stay tuned as in the next video we are going to talk about the JSON file and again we're going to see how to load data from external sources using JSON, thank you and stay tuned.

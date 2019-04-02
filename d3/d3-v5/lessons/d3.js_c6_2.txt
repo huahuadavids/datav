@@ -1,0 +1,74 @@
+In this video, we are going to talk about the upside-down SVG
+
+ and more specifically I'm going to show you a couple of ways to improve the code and make the data look more realistic so let's start from the app J's file. 
+
+I'll show you two ways to randomize your data. So the first thing is that I'm going to clear the data array and the next thing is I'm going to do a for loop.
+
+ So inside there I have a VAR i and it's going to start from 0 and then it's going until 20 and I'm going to increase it by 1 so I have just I plus plus. 
+
+So inside these for section I'm going to need a variable and this variable will be the num.
+
+ But now the important thing is there ng- so I'm going to have the math don't run down and inside there I'm going to have volume and this is going to be from 0 to 1. 
+
+Also I'm going to multiply this value by 60 because I wanted to be quite bigger or else if I don't do that I'm only going to have values until 0. 
+
+The next thing I'm going to do is to add the mass dot floor and this function is going to size dial all the numbers. 
+
+Now the last thing also that I'm going to do is to actually push the numbers and in order to do that I'm going to need the data don't push num.
+
+ Ok if you did that then just save and repress. Every time you are saving and refreshing you should be seeing different results so try to play with your fresh and if you did everything correctly then you will see different results. 
+
+After doing that go back to your text editor and I'm going to show you another way which is more like a D3.js style and this way is the D3 don't a random uniform. 
+
+This function takes two parameters and these are the minimum and maximum values so going to set it to 1 and 60 and then call the function again, this is done with an extra pair of parentheses.
+
+ After doing that just save and go back to your browser. Alright now you should be able to do all the different values and again this should be randomized so refresh your website to check if everything is working out fine. 
+
+Another improvement is to change the code from HTML to SVG so the first thing that we are going to do is actually to create an SVG element and this is very easy. 
+
+So in order to do that you will need a bar and this bar is going to be an SVG.
+
+ This will have a D3 dot select and inside there I'm going to select my class and for me this is bar charts,
+
+ maybe you have named yours with a different name and that's totally ok. 
+
+Then we have to append and in this method we are going to have the SVG. I'll also pass the dimension so it will need the attribute method two times,
+
+ one for the width and one for the height. For me my width is going to be 800 pixels whereas the height is going to be 400 pixels, 
+
+maybe you have set these values in world style that CSS file differently but that is okay and it doesn't really matter. 
+
+Then the next thing I'm going to do is to wind the data and create bars. 
+
+To do that I'm going to change a little bit the code that we write the previous video.
+
+ The first thing that I'm going to do is to actually delete the first line that says digital select bar chart and then I'm going to continue from the select all. 
+
+I'm going to have the SVG but this time I don't need the date because I actually just created correct and rank stands for art Angela.
+
+ All right so I'm going to have the select all rect, then I'm going to have the data with the data parameter, the enter, append and again also to delete these lines of code but I'm going to need the attribute.
+
+ And actually I need the attribute four times and this is for X, Y, width and height so let's fill everything up.
+
+ The X is going to be the most tricky one so we need to give some space between the bars so I'm also going to need a function to do that. 
+
+This function is going to have a D and an I, D stands for data and I for index and the thing that is going to return is I which is going to be multiplied by 1000,
+
+ that is the number I have gave to the style and then this is going to be data dot length. 
+All right we have that so it will give some space between the bars. Now the y is pretty simple, you don't need to do anything special just Y and then 0.
+
+ The next thing I'm going to do is to do the width and the width is going again to have a value and for me this value is going to be the 800 pixels. 
+
+And then I'm going to have a data dot length minus 5, you can have whatever you like but for me this 5 is a padding and this is the padding between the bars again.
+
+ So the last thing I'm going to do is the height, in the function I'm just going to have a D and also the thing that I'm going to return is D. 
+
+Take a moment, look at this code, if you don't understand something just return and go back but for now I'm going to save and refresh. All right after doing that let's go to the website and now you can see all the bars. One thing that I'm going to change is actually this 1000 width, I'm going to do it like 80 pixels because I think this will look more beautiful. 
+
+After doing that also save and refresh your website and now you should be able to do the results more clear.
+
+ The bars are upside down and you have to fix it so stay tuned, I'm going to show you a way how to revert your bar charts.
+
+ So far is the basic structure of a bar charts and then we saw a couple of ways to randomize our data, we converted the HTML into an SVG element as well as we saw a couple of function in the attributes.
+
+ In the end we solve the result and it was upside down. So stay tuned as in the next video we are going to learn how to reverse the bar charts. See you in the next one.
