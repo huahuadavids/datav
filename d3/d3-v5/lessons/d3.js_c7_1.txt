@@ -1,0 +1,66 @@
+Hello and welcome to the seventh section, creating a scatter plot. 
+
+Like this section is should be familiar with use methods, functions and creating SVGs. 
+
+In the previous section, we created a bar graph whereas in this one we will create a scatter plot and 
+
+learn more things about some new methods. Before getting into action let me show you an example of a scatter plot.
+
+ A scatter plot is a way to show data where a dot represents two values so how to know the x and y coordinates. 
+
+Scatter plots are really useful when you have your data in a close range and not in a wider one. 
+
+Okay now let's start coding and visualizing. All right so far I have three new files, an index.html, an app JS and a style sheet sets. 
+
+First I'm going to explain to you what exactly is on my index it's tumor and actually I haven't changed a lot of things.
+
+ The head section is the same, the only thing that has changed is now I have section seven whereas before I had sections six and in the body section everything is the same.
+
+ So I have an ID with bar charts and then two scripts, one which is further library D3.js and you totally needs this one and another one which is just for the app JS and you certainly also need this one. 
+
+But maybe you have your file with another name which is totally fine. First let's go through its style that success. 
+
+Here I have the bar chart with a width, height, background color and margin, also this is the same as before and the only thing that I have changed is the margin where before this first value was in ten pixels and slab it's on 20 pixels.
+
+ If you want to keep it in 10 pixels that's totally fine and everything will be shown fine. And so last but not least you have the app dot js and here I have three variables. 
+
+The last two ones are at the bar chart width and height and this are exactly the same as in the sixth section. 
+
+But now I have another variable which is the data and this is an object that includes other objects. 
+
+An object is like an array so it's like bigger a that includes other arrays. 
+
+Every value that you see is randomly unsigned and inside every line as you can see I have two points or two values,
+
+ for example the first one is three hundred and 150 and this is for the x and y points. 
+
+In total I have eight points and later you will see them in the scatter plot. I would suggest you to also give some random values, you don't have to use the same as mine. 
+
+And now I think it's time to start creating our own SVG elements, again I would suggest you to pause this video and try to build it on your own, 
+
+after that I'm going to show you my solution. Okay did you create it the amount, well let me show you how I do. As you can see the first thing that I did was creating a variable and this variable is named SVG. 
+
+Then I'm going to need the method select and inside there I'm going to select the SVG.
+
+ Right after that I also need to append so I'm going to use a method a parent and insider I'm going to have the SVG. So now I'm going to change the Select because it's actually bar chart and not SVG, the SVG is going to be appended. 
+
+Okay if you did that then you all should have added two more attributes, the first attribute is for the height and the second one is for the way. It doesn't matter if you have reversed these attributes so maybe first you write you width which is turn on file and then your height. 
+
+For me this is bar chart height and then I'm also going to do the same with the wind so I'm going to have weight and then a bar chart with. 
+
+Okay if you also did that then I think we can continue with creating the circles.
+
+ Just to keep everything tidy I'm going to use a comment and I will say create circles. 
+
+All right now I'm going to use the SVG that I just created and this time I'm going to use the select all function and snow this lights and inside there I want to have the circle.
+
+ Okay right after that I'm going to need the data method and inside there as always I'm going to pass the variable that I created which is called data.
+
+ And of course I'm also going to need the enter and append the circle, the same as in the select all. 
+
+Okay now I'm going to have four times the our each method and each time I'm going to have something different.
+
+ The first one that I'm going to need for the circles is C X and then I'm going to have a function that is going to take as an input thick T and it will return the date 0 which is the first index.
+ I'm going to do the same thing with this see why and I'm doing this because in each legs and a white coordinate. So it's the same thing I just copy and paste it and then for the D since I'm going to have the second index it's going to be Tila. 
+
+Now let's continue with our our strands from radius and because we have circles we also need the radius. Last but not least I'm going to use the feel method and this time I'm going to give it a color, let's say grey but of course you can use whichever you may like. Okay that's it for this video, I'm going to continue and show you the result in the next lab so just keep watching. So far we have created the basic structure of scatter plot, coming up is learning how to creating labels that we also saw in previous section and of course we are going to display the data and sew them into our browser. Stay tuned for the next video scatter plot. Stay tuned and thank you for watching.

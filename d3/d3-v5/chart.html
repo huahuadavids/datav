@@ -62,10 +62,10 @@
     return d
   }).
   attr("y", function(d){
-    return $height - 4*d  +  15
+    return $height - 4*d  -  15
   }).attr("x", function (d, i) {
     return i * ($width / data.length)  + ($width/data.length - $padding)/2
-  }).attr('fill' ,'white').attr("font-size" , '16px').attr("text-anchor", 'middle')
+  }).attr('fill' ,'black').attr("font-size" , '16px').attr("text-anchor", 'middle')
 
 
 </script>

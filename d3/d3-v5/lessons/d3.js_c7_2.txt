@@ -1,0 +1,20 @@
+Hello, in this video, we're going to talk about creating a scatter plot.
+
+ In this video, we're going to labels, view the result, talk about ways to make it more functional and prettier, 
+
+without any further ado let's jump into the code. The first thing that I'm going to do as always is to add a comment so my comment is create labels.
+
+ Right after that I'm ready to start coding. 
+So I'm going to have an SVG don't select all and this time system during the labels I want to select the text. 
+
+Then I'm going to need it data and insight data and enter and an append method, the append will also going to take the text as an input. 
+
+Now the text is going to be a function with T and it will return the d dot join. Now the data is currently in an array and I just want to display the coordinates to the user. 
+
+To do that I can call the join function to combine this two values into a string, the comma will act as a separator. 
+
+Now I'm going to set the x and y coordinates for the first and the last value in the array, this is the same as we did in the circle. 
+
+So you'll have your attribute X function D and return D 0 and for the Y D 1, this is index 1 and index 2. Okay save, you go back to your browser and refresh the site. As you can see we have the circles with the labels but everything is quite huge so let's go back to the text editor and fixes. I'm going to divide the radius with 10, 10 is just a random number so you can use your own.
+
+ I'm going to refresh it and so now everything seems quite better, wouldn't you agree. Creating a scatter plot is similar to creating a bar craft, create the elements, bind the data, create more elements for the data and our details. You can use the join function to combine arrays to strings, this can be useful for displaying coordinates stored in arrays. So far is in the basic structure of a scatter plot and then in this video we saw the result. So stay tuned as in the next video, we're going to talking about breaking down these scales.
