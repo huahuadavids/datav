@@ -22,9 +22,11 @@ https://mapshaper.org/ 可以查看较大的geojson，还能够简化GeoJSON数�
 
 
 ## webgl 
-[three.js入门教程](http://www.hewebgl.com/article/articledir/1)
+- [three官网](https://threejs.org/)
+- [three.js入门教程](http://www.hewebgl.com/article/articledir/1)
 
-
+## visjs
+- [visjs](http://visjs.org/)
 
 
 ## d3.js 
