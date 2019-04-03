@@ -8,10 +8,24 @@
 - 抛弃不精确的样本数据，分析全部数据（小数据时代 随机采样分析 依赖随机性，很难做到 ）
 - 着眼数据的完整性，弱化单条数据精确性 
 
-
+## resources 
 http://geojson.io/    可以在线查看，绘制，修改GeoJSON数据
-
 https://mapshaper.org/ 可以查看较大的geojson，还能够简化GeoJSON数据
+
+
+## svg 
+> 请看svg目录 
+
+
+## canvas 
+> 请看canvas目录 
+
+
+## webgl 
+[three.js入门教程](http://www.hewebgl.com/article/articledir/1)
+
+
+
 
 ## d3.js 
 > d3是data driven documents 数据驱动文档的缩写
