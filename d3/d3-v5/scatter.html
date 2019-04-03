@@ -57,8 +57,29 @@
     return d[1]
   }).attr("font-size", 12)
 
+const scaleX = d3.scale().linear().domain().range()
 
 
+
+</script>
+
+<script>
+  {
+    const data = [0, 100, 200, 300, 400, 500, 600]
+    const scale = d3.scaleLinear()
+      .domain(d3.extent(data))  // 输入 数据集
+      .range([0, 300]);  // 输出 可视化集
+  }
+
+
+</script>
+
+
+<script>
+  var arr = [11, 2, 3, 4, 7, 88, 99]
+  console.log(d3.min(arr))
+  console.log(d3.max(arr))
+  console.log(d3.extent(arr))
 
 </script>
 

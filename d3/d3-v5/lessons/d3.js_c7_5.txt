@@ -1,0 +1,29 @@
+Hello, in this video we're going to talk about how to specifically work with arrays 
+
+because so far of begin using hard coding data but this is not a real life example.
+
+ So let's go through arrays. And I just jumped into the documentation of D3 array.
+
+ I'm going to leave this link in the sources section of the course. 
+
+So I'm going to read the first few lines of D3 array. 
+
+Data and JavaScript is often represented by an array and so on tends to manipulate arrays when visualizing or analyzing data. 
+
+Some common forms of manipulation includes taking a contagious slice of an array, filtering an array using a predicate function and snapping an array to a parallel set of values using a transform function.
+
+ All right I'm pretty sure that you got the point of what an array is. If you need more information just scroll through this page and you will find more useful information,
+
+ but for now let's just jump into the code. The first thing that I'm going to do is to create an array, 
+
+I'm going to name the array slices and the values I'm going to give are 100, 200, 300 and 400. 
+
+Then the next thing I'm going to do is to alternate the domain, I'm going to need dynamically the smallest and the biggest values.
+
+ In order to do that I'm going to have two functions the first one is the main so I have D3 dot main slices and then D3 dot max slices, 
+
+the slices of course is the array that we just created. I'm going to leave the range as it is. 
+
+You should know we can alternate it also but I'm not going to do this right now. Save, refresh, go back to your website and specifically in the console top and console the scale.
+
+ If you see the same result as before then everything is correct. In the next lecture we take a look at how to apply this new knowledge to our graphs. So far we started this section by creating a scatter plot then we continue with some theory about scales and then we saw how exactly we should use scales. In this lesson we talked about arrays and how to use them in real-life projects. In the next video I'm going to talk about is visualizing your data with scales, stay tuned and see you in the next video.
