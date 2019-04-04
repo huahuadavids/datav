@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    background: white;
+    text-align: center;
+  }
+
+  svg {
+    /*filter: url('#dropshadow');*/
+  }
+
+  path {
+    cursor: pointer;
+    stroke: #ccc;
+    stroke-width: 0px;
+  }
+
+</style>
+
+
+<svg id="piechart">
+  <filter id="dropshadow" height="150%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="2"/> <!-- stdDeviation is how much to blur -->
+    <feOffset dx="1" dy="1" result="offsetblur"/> <!-- how much to offset -->
+    <feMerge>
+      <feMergeNode/> <!-- this contains the offset blurred image -->
+      <feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
+    </feMerge>
+  </filter>
+</svg>
+
+<script src="../d3@3.5.16/d3.js"></script>
+<script>
+  var width = 300;
+  var height = 300;
+  var center = [width / 2, height / 2];
+  var innerRadius = 0;
+  var outerRadius = 100;
+
+  var data = [
+    [0, 35],
+    [0, 19],
+    [0, 35],
+    [0, 7],
+    [0, 45],
+    [0, 27],
+    [1, 0] // need last one to have a start value > 0, end value == 0
+  ];
+  var color = d3.scale.category20();
+
+  var pie = d3.layout.pie()
+    .value(function (d) { return d[0]; })
+    .sort(null);
+
+  var svg = d3.select('#piechart')
+    .attr('width', width)
+    .attr('height', height)
+    .append('g')
+    .attr('transform', 'translate(' + center[0] + ', ' + center[1] + ')');
+
+  var arc = d3.svg.arc()
+    .innerRadius(innerRadius)
+    .outerRadius(outerRadius);
+
+  var hoverArc = d3.svg.arc()
+    .innerRadius(innerRadius)
+    .outerRadius(outerRadius + 10);
+
+  var path = svg.datum(data).selectAll('path')
+    .data(pie)
+    .enter().append('path')
+    .attr('fill', function (d, i) { return color(i); })
+    .attr('d', arc)
+    // set wedge opacity to 0 if it has mass on load (only the last wedge has mass to account for transition in
+    .style('opacity', function (d) { return d.data[0] === 0 ? 1 : 0; })
+    .each(function (d) { this._current = d; })
+    .on('mouseover', function (d, i) {
+
+      d3.select(this)
+        .transition()
+        .duration(500)
+        .ease('elastic')
+        .attr('transform', function (d) {
+          var dist = 10;
+          d.midAngle = ((d.endAngle - d.startAngle) / 2) + d.startAngle;
+          var x = Math.sin(d.midAngle) * dist;
+          var y = -Math.cos(d.midAngle) * dist;
+          return 'translate(' + x + ',' + y + ')';
+        });
+    }).on('mouseout', function (d, i) {
+      d3.select(this)
+        .transition()
+        .duration(500)
+        .ease('bounce')
+        .attr('transform', 'translate(0,0)')
+    });
+
+
+
+
+  // new values for transitions
+  pie.value(function (d) { return d[1]; });
+
+  path = path.data(pie);
+  path.transition().duration(1000).attrTween('d', arcTween);
+
+  function arcTween(a) {
+    var i = d3.interpolate(this._current, a);
+    this._current = i(0);
+    return function(t) {
+      return arc(i(t));
+    };
+  }
+</script>
+
+</body>
+</html>
