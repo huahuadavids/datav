@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>D3: Zoom to vehicle</title>
+		<title>D3: Hide and reveal vehicles</title>
 		<script type="text/javascript" src="../d3.js"></script>
 		<style type="text/css">
 
@@ -312,7 +312,7 @@
 								.classed("unclickable", "true");
 
 							//Transition areas into new positions (i.e., thisType's area
-							//will go to a zero baseline; all others will flatten out).
+							//will go to a zero baseline; all _others will flatten out).
 							//
 							//Store this transition in a new variable for later reference.
 							var areaTransitions = paths.transition()
@@ -326,7 +326,7 @@
 										var sum = 0;
 			
 										//Calculate the total (sum) of sales of this type,
-										//ignoring the others (for now)
+										//ignoring the _others (for now)
 										sum += d[thisType];
 										
 										return sum;
@@ -431,67 +431,6 @@
 
 									//Get that color on the spectrum
 									return d3.interpolateCool(normalized);
-								})
-								.on("click", function(d) {
-
-									//Which vehicle was clicked?
-									var thisType = d.key;
-
-									//Fade out all other vehicle areas
-									d3.selectAll("g#vehicles path")
-										.classed("unclickable", "true")  //Prevent future clicks
-										.filter(function(d) {  //Filter out 'this' one
-											if (d.key !== thisType) {
-												return true;
-											}
-										})
-										.transition()
-										.duration(1000)
-										.attr("opacity", 0);
-									
-									//Define area generator that will be used just this one time
-									var singleVehicleArea = d3.area()
-										.x(function(d) { return xScale(d.data.date); })
-										.y0(function(d) { return yScale(0); })  //Note zero baseline
-										.y1(function(d) { return yScale(d.data[thisType].sales); });
-										//Note y1 uses the raw 'sales' value for 'this' vehicle,
-										//not the stacked data values (e.g., d[0] or d[1]).
-
-									//Use this new area generator to transition the area downward,
-									//to have a flat (zero) baseline.
-									var thisAreaTransition = d3.select(this)
-										.transition()
-										.delay(1000)
-										.duration(1000)
-										.attr("d", singleVehicleArea);
-
-									//Update y scale domain, based on the sales for this vehicle only
-									yScale.domain([
-											0,
-											d3.max(dataset, function(d) {
-												return d[thisType].sales;
-											})
-										]);
-									
-									//Transitions the clicked area and y axis into place, to fit the new domain
-									thisAreaTransition
-										.transition()
-										.duration(1000)
-										.attr("d", singleVehicleArea)
-										.on("start", function() {
-
-											//Transition axis to new scale concurrently
-											d3.select("g.axis.y")
-												.transition()
-												.duration(1000)
-												.call(yAxis);
-													
-										})
-										.on("end", function() {
-											//Restore clickability (is that a word?)
-											d3.select(this).classed("unclickable", "false");
-										});
-
 								})
 								.append("title")  //Make tooltip
 								.text(function(d) {

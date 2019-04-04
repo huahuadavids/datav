@@ -9790,7 +9790,7 @@ function packEnclose(circles) {
       oy = aa * a.y + ba * b.y + ca * c.y,
       cx, cy, i, j, k, sj, sk;
 
-  // Initialize the front-chain using the first three circles a, b and c.
+  // Initialize the front-chain using the first three.js circles a, b and c.
   a = new Node$1(a), b = new Node$1(b), c = new Node$1(c);
   a.next = c.previous = b;
   b.next = a.previous = c;

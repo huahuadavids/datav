@@ -1,1 +1,24 @@
-Hello. In this video, we are going to continue with styling the x-axis. So let's go back to the text editor. We have a few more things to do. We will change the ticks in order to make them more dynamic, let's create the ticks function. Now inside this function the argument is a number so I'm just going to give it 6 and let's go back to the website and refresh it. As you can see D3 didn't really consider our number and keep doing her own stuff. I'm going to give it another number like 3, I'm going back to the browser and I'm going to show you again the results. Now there is a difference, D3 has considered just a little bit our number and change some things. If you want the absolute control then there is another function that you can use and this function is called tick values and it's argument it's an array. Inside this array you can specify the numbers that you want, for me this is going to be 0, 150, 300, 500 and 520. You can save it, go back to the browser, refresh it and see the numbers again. As you can see in my case the numbers 500 and 520 weren't really considered and why is that. Well let's go back and I'm going to show you my data. If you notice in the X part I don't have any number greater than 400 which means that the values of 500 and 520 really and good so that's why D3 rejected them. Now I like having my array as more dynamic so I will go back to the tick's function and I'm going to comment that tick values, I would suggest you to do the same thing and let D3 handle the distances between the kicks. This is going to be my last example so I'm going to have the value 9 and this is how it's going to look like. All right so far we added the x axis and then we style it, stay tuned as in the next video I'm going to show you how to add the y axes, see you in the next video.
+Hello. In this video, we are going to continue with styling the x-axis. 
+
+So let's go back to the text editor. We have a few more things to do. 
+
+We will change the ticks in order to make them more dynamic, let's create the ticks function. 
+
+Now inside this function the argument is a number so I'm just going to give it 6 and let's go back to the website and refresh it. 
+As you can see D3 didn't really consider our number and keep doing her own stuff. 
+
+I'm going to give it another number like 3, I'm going back to the browser and I'm going to show you again the results. 
+
+Now there is a difference, D3 has considered just a little bit our number and change some things. 
+
+If you want the absolute control then there is another function that you can use and this function is called tick values and it's argument it's an array. 
+
+Inside this array you can specify the numbers that you want, for me this is going to be 0, 150, 300, 500 and 520. 
+
+You can save it, go back to the browser, refresh it and see the numbers again. 
+
+As you can see in my case the numbers 500 and 520 weren't really considered and why is that.
+
+ Well let's go back and I'm going to show you my data. 
+
+If you notice in the X part I don't have any number greater than 400 which means that the values of 500 and 520 really and good so that's why D3 rejected them. Now I like having my array as more dynamic so I will go back to the tick's function and I'm going to comment that tick values, I would suggest you to do the same thing and let D3 handle the distances between the kicks. This is going to be my last example so I'm going to have the value 9 and this is how it's going to look like. All right so far we added the x axis and then we style it, stay tuned as in the next video I'm going to show you how to add the y axes, see you in the next video.

@@ -16,9 +16,14 @@
   #app {
     width: 800px;
     height: 400px;
-    background: white;
+    background: #ccc;
     margin: 20px auto;
   }
+
+  #datav circle{
+    cursor: pointer;
+  }
+
 
 </style>
 
@@ -43,29 +48,29 @@
 
   let $width = 800, $height = 400, $padding = 20;
 
-  const svg = d3.select("#app").append("svg").attr("width", $width).attr("height", $height)
+  const svg = d3.select("#app").append("svg").attr("id" ,'datav').
+  attr("width", $width).attr("height", $height)
 
   const scaleX = d3.scaleLinear().domain([0, d3.max(data, function(d){
-    return d[0]
+    return d[0] + $padding
   })]).range([0, $width])
 
   const scaleY = d3.scaleLinear().domain([0, d3.max(data, function(d){
-    return d[1]
+    return d[1] + $padding
   })]).range([0, $height])
 
 
   const axisX = d3.axisBottom(scaleX)
-    // .ticks(10); 有几个刻度
+  // .ticks(10); 有几个刻度
+  // tickValues([0,100]) 控制显示所有的刻度
 
-  svg.append("g").classed("x-axis" ,true).attr("transform", "translate(0,"+ ($height - $padding) +")")
-    .call(axisX)
 
 
   svg.selectAll("circle").data(data).enter().append("circle").attr("cx", function (d) {
     return scaleX(d[0])
   }).attr("cy", function (d) {
     return scaleY(d[1])
-  }).attr("r", 7).attr("stroke", 'white')
+  }).attr("r", 17).attr("stroke", 'white').attr("fill", 'green')
 
 
 
@@ -75,9 +80,11 @@
     return scaleX(d[0])
   }).attr("y", function (d) {
     return scaleY(d[1])
-  }).attr("font-size", 12)
+  }).attr("font-size", 12).style("color" , "black")
 
-
+  svg.append("g").classed("x-axis" ,true).
+  attr("transform", "translate(0,"+ ($height - $padding) +")")
+    .call(axisX)
 
 
 

@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>D3: Update axis</title>
+		<title>D3: Click to transition</title>
 		<script type="text/javascript" src="../d3.js"></script>
 		<style type="text/css">
 
@@ -351,7 +351,7 @@
 								.data(thisTypeSeries, key);
 
 							//Transition areas into new positions (i.e., thisType's area
-							//will go to a zero baseline; all others will flatten out).
+							//will go to a zero baseline; all _others will flatten out).
 							//
 							//Store this transition in a new variable for later reference.
 							var areaTransitions = paths.transition()
@@ -365,7 +365,7 @@
 										var sum = 0;
 			
 										//Calculate the total (sum) of sales of this type,
-										//ignoring the others (for now)
+										//ignoring the _others (for now)
 										sum += d[thisType];
 										
 										return sum;
@@ -376,15 +376,6 @@
 							//(from above).  Transition areas to newly updated scale.
 							areaTransitions.transition()
 								.delay(200)
-								.on("start", function() {
-
-									//Transition axis to new scale concurrently
-									d3.select("g.axis.y")
-										.transition()
-										.duration(1000)
-										.call(yAxis);
-											
-								})
 								.duration(1000)
 								.attr("d", area);
 								

@@ -11,6 +11,19 @@
     padding: 0;
     margin: 0;
   }
+  @keyframes hua {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .huahua {
+    background: #ccc;
+    margin: 10px 0 ;
+    animation: hua 2.2s;
+  }
 </style>
 
 <div id="app">
@@ -37,7 +50,11 @@
       return "this is p + " + d;
     }).style('color', function(d){
       return d < 20 ? 'red' : 'blue'
+    }).style("width", function(d){
+      return d*10 + 'px'
     })
+
+    
 
     d3.select("body").selectAll("p").data(dataset).exit().remove();
   }
