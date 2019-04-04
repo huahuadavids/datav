@@ -1,0 +1,27 @@
+Hello, in this video, we are going to add the y-axis. 
+
+Adding the y-axis is quite easy and the process is similar to the one with the x-axis. 
+
+So let's go back to the text editor and the first thing that I'm going to do is simply adding some comments in there in order to make my code more readable. 
+
+Now let's keep writing our code for the y-axis variable.
+
+ I'm going to use D3 dot axis left and inside there I'm going to have my Y scale, I can have either an axis left or an axis right. Then I'm going to copy and paste the same code as we did in the x axis, I'm going to change a few things like the translate here, I don't need to have the height since amazing about width. The width is going to be very simple, I'm going to have the number 20 and maybe later we will change this number. 
+
+Everything that it has to do with the x axis is going to be converted in the y axis, that's why I'm calling the y axis. Save and refresh your website. Now let's see the result. Okay I can see a few problems and the first one is that in these axes we can't really see the numbers but let's go and fix this problem for the console. 
+
+I'm going with my arrow a little bit down in order to find the padding and if you remember we give it for the height and then value here for the width and it was 20 but we don't like 20 as the padding is too small,
+
+ I'm going to give a bigger number. Save and refresh. This change is also going to be made in our text editor so we don't have to go back and change it from there too.
+
+ As you can see the result is better but we can make it a little bit more beautiful. 
+
+I'm going to style CSS and copy the things that I have written for the x-axis, I'm going to paste them and whenever I have an x axis I'm going to convert it into a y-axis, everything else is the same and you don't have to change anything.
+
+ Go back to the app Js and let's make a few more things in order to make our scale a little bit more beautiful.
+
+ You don't have to change these things but I would like to show them to you in order to be able to manipulate even more ticks. I'm going to add ticks 5 but obviously I'm going to let D3 hunter everything and then I'm going to have a tick format and this format will take a function. The function for this one is going also to shrink an argument as ad and inside there I'm going to return the D and the percentage. 
+
+Here the percentage is not really important but I would like to show it to you because maybe you will need it in another project. 
+
+After you've done that you are ready, you don't have to change anything else. Save, refresh your website and let's see the result. All right the style is pretty much okay, just one more little thing here, I'm going to change it to maybe 60, save and refresh to see my numbers even more clear. If you did that then you are fine. This is our plot, see it wasn't very difficult. So far we added and styled the x-axis and then we did the same thing for the y-axis. We created beautiful plot but now we are going to continue with the line chart so stay tuned as in the next video I'm going to show you how to set up your first line chart.

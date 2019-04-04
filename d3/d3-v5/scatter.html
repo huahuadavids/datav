@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>scatter</title>
 </head>
 <body>
-
 <style>
 
   * {
+
     padding: 0;
     margin: 0;
   }
@@ -22,6 +22,16 @@
 
   #datav circle{
     cursor: pointer;
+  }
+
+  .x-axis path, .x-axis line{
+    stroke-width: 3;
+    shape-rendering: crispEdges;
+  }
+
+  .y-axis path, .y-axis line{
+    stroke-width: 3;
+    shape-rendering: crispEdges;
   }
 
 
@@ -43,7 +53,7 @@
     [320, 350],
     [220, 360],
     [370, 60],
-    [670, 160],
+    [670, 160]
   ];
 
   let $width = 800, $height = 400, $padding = 20;
@@ -60,9 +70,16 @@
   })]).range([0, $height])
 
 
-  const axisX = d3.axisBottom(scaleX)
-  // .ticks(10); 有几个刻度
-  // tickValues([0,100]) 控制显示所有的刻度
+  const axisX = d3.axisBottom(scaleX);
+
+  const axisY = d3.axisLeft(scaleY).tickFormat(function(d){
+    return d + 'm'
+  })
+
+   //tickValues([0,100,200,300,400,500,600,700])控制显示所有的刻度
+   //.ticks(16); // 有几个刻度
+
+
 
 
 
@@ -82,11 +99,14 @@
     return scaleY(d[1])
   }).attr("font-size", 12).style("color" , "black")
 
+
   svg.append("g").classed("x-axis" ,true).
   attr("transform", "translate(0,"+ ($height - $padding) +")")
     .call(axisX)
 
-
+  svg.append("g").classed("y-axis" ,true).
+  attr("transform", "translate(" + ($padding + 20) +",0)")
+    .call(axisY)
 
 
 </script>

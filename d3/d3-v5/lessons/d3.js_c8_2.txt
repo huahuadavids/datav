@@ -21,4 +21,8 @@ As you can see in my case the numbers 500 and 520 weren't really considered and 
 
  Well let's go back and I'm going to show you my data. 
 
-If you notice in the X part I don't have any number greater than 400 which means that the values of 500 and 520 really and good so that's why D3 rejected them. Now I like having my array as more dynamic so I will go back to the tick's function and I'm going to comment that tick values, I would suggest you to do the same thing and let D3 handle the distances between the kicks. This is going to be my last example so I'm going to have the value 9 and this is how it's going to look like. All right so far we added the x axis and then we style it, stay tuned as in the next video I'm going to show you how to add the y axes, see you in the next video.
+If you notice in the X part I don't have any number greater than 400 which means that the values of 500 and 520 really and good so that's why D3 rejected them. 
+
+Now I like having my array as more dynamic so I will go back to the tick's function and I'm going to comment that tick values, I would suggest you to do the same thing and let D3 handle the distances between the kicks.
+
+ This is going to be my last example so I'm going to have the value 9 and this is how it's going to look like. All right so far we added the x axis and then we style it, stay tuned as in the next video I'm going to show you how to add the y axes, see you in the next video.
