@@ -87,9 +87,22 @@ svg和flash，后者是公司的，基于内部dom的二进制流文件
 - viewBox="0 0 500 500" 定义试图范围 
 - opacity 是全部透明度 ， stroke-opacity fill-opacity 
 - fill stroke stroke-width 
-- transform
+- transform 和css3 差不多 
 - 可以写style 属性都可以写里边 
 - line的 stroke-linecap="round" 线头是圆的 
 - stroke-linejoin = round 线条相交的处理，是圆的 
 - circle 就是 ellipse的 rx = ry 
-
+- 动画 使用动画，就把这个标签嵌入到需要的元素里 
+```
+<animate
+  attributeName="ry"
+  attributeType="XML"
+  from="0"
+  to="80"
+  begin="0s"
+  dur="2s" 持续时间 
+  repeatCount="indefinite" 持续次数，这个是无限次  
+  fill="freeze"  //有2个值 remove 动画结束表示回到初始状态， freeze表示保持动画执行完的状态 
+/>
+```
+- g 是group的缩写，组合一组图形，就行操作等 

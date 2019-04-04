@@ -16,7 +16,7 @@
   #app {
     width: 800px;
     height: 400px;
-    background: orange;
+    background: white;
     margin: 20px auto;
   }
 
@@ -41,7 +41,7 @@
     [670, 160],
   ];
 
-  let $width = 800, $height = 400;
+  let $width = 800, $height = 400, $padding = 20;
 
   const svg = d3.select("#app").append("svg").attr("width", $width).attr("height", $height)
 
@@ -53,6 +53,12 @@
     return d[1]
   })]).range([0, $height])
 
+
+  const axisX = d3.axisBottom(scaleX)
+    // .ticks(10); 有几个刻度
+
+  svg.append("g").classed("x-axis" ,true).attr("transform", "translate(0,"+ ($height - $padding) +")")
+    .call(axisX)
 
 
   svg.selectAll("circle").data(data).enter().append("circle").attr("cx", function (d) {
@@ -73,6 +79,9 @@
 
 
 
+
+
+
 </script>
 
 <script>
@@ -82,7 +91,6 @@
       .domain(d3.extent(data))  // 输入 数据集
       .range([0, 300]);  // 输出 可视化集
   }
-
 
 </script>
 
