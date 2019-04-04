@@ -1,0 +1,52 @@
+Today we are going to talk about visualizing with scales, 
+
+we are excited for this video as this is going to be your last lesson in scatter plots. 
+
+I think it's time to use this knowledge in our scatter plot graph so let's go back to the text editor. 
+
+I'm going to continue with the code from section 7.2. If you don't have this code in your machine you can always download it from the external section of this course or you can even try to recreate it,
+
+ the code is not very complex and you should be able to do this. 
+
+The numbers we are using sometimes we're too high and other times were too small.
+
+ When we were creating the circles we divided the radius with 10 
+
+but lets you scale to make our graph work nicely with every kind of values. 
+
+We have to create two scales for the data array we created in a previous lesson, 
+
+these scales are for the x and y coordinates.
+
+ We will create a comment create scales and try to assure that the first variable which will be named X scale and it will hold the scale linear values.
+
+ All right, after that we are going to use the domain but this time we are going to change it a little bit.
+
+ We will have two inputs, one for the minimum number and one for the greatest number, I'm actually going to use zero as the minimum value because this is a number that you may have added to your data array.
+
+ The next input is going to be inside the function so I'm going to have the max. Because I'm using a complex array and you specifically need the biggest number of the x coordinates I'm going to have a function that will return the first or the zero index.
+
+ The next step is to create the range function. To do that I'm going to have 0 and chart width. Since I'm using the x coordinate I need to work with the width rather than the height and sing some scaling down I don't have to worry about the lowest number and that's why I'm using 0. 
+
+I'm going to do a copy and then paste the same things for the x coordinates but I'm going to change the value from x scale to Y scale. 
+
+Another thing that I have to do is actually the returning point, it can be 0 and it should be 1. 
+Last but not least change the bar chart width to height. All right we're getting closer, 
+
+we just have to change a few other things.
+
+ Copy the X scale and let's go through the create circles and then the text. 
+
+Whenever you're returning the D point you have to add the X scale or the Y scale, correspondingly if you are having the zero index or the 1 index you have to do the same in labels but right after that you will be ready. 
+
+Just save, refresh and go back to your website. Okay I just refreshed my website and I can see the results, everything looks house nicely. If you see the same result as me then congratulations, you just learned how to do functionally a scatter plot. So far we created a scatter plot and then we take a short break to see theoretically and practically with a small example what are the skills and how to properly use them. 
+
+Then we continued with arrays to make our project a little bit more dynamical and to corresponds to live projects. 
+
+Now in the next section we are going to see some amazing things, 
+
+we're going to begin with adding axes to our charts and then refining our SVG's outcome. 
+
+We will create a line chart as well as an area chart. 
+
+Stay tuned to learn how to create these charts, I'm very excited to teach you how to code them and I'm going to show you the best ways.

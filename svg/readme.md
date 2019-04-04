@@ -84,4 +84,12 @@ svg和flash，后者是公司的，基于内部dom的二进制流文件
 
 
 ### 基本属性
-- fill stroke stroke-width transform 
+- viewBox="0 0 500 500" 定义试图范围 
+- opacity 是全部透明度 ， stroke-opacity fill-opacity 
+- fill stroke stroke-width 
+- transform
+- 可以写style 属性都可以写里边 
+- line的 stroke-linecap="round" 线头是圆的 
+- stroke-linejoin = round 线条相交的处理，是圆的 
+- circle 就是 ellipse的 rx = ry 
+
