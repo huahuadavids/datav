@@ -1,0 +1,64 @@
+Today you are going to see the final result of the tree that we've been making for so long. 
+
+We will continue from the previous code but first I want to show you a few things. 
+
+In the translate a hub added the source for x and y and then I have another minor change. 
+
+This select all submits select instead of select all because we are going for the circle and then in niche nodes, sooner did you do that I simulate selects.
+
+ Now I'm going to copy and paste another small thing which is about the diagonal. 
+
+The diagonal creates a curved diagonal path from parent to the child node, 
+
+this is something standard and you don't have to remember it by heart. 
+
+All right now let's keep going.
+
+ In this part we are going to work with links, in the previous part we were working with the nodes. 
+
+This structure is pretty much in the same between the links and the nodes so I'm going to type a little bit faster because we've already down the same things for the nodes.
+
+ The first thing is the SVG with a select all and with the select all contains the path dot link.
+ Now we also need the data with links and a function with D that will return the d.ID.
+
+ If you can recall from one of the first lessons of this section we said that nodes have a set of characteristics and some of those characteristics were the ID,
+
+ later we will also use another characteristics which was the parents.
+ Now we will enter new links of the parents previous position, in order to do that we will have the link don't enter and another new method which is insert path and G. 
+
+Now something that's not new, it's the attributes with class and the class we'll take the link.
+
+ All right the other attribute will be the D with the function that we'll take as a parameter at the D 
+
+and this time it will contain a variable, this is the first time that we have the variable in this way. The variable is out and it will have an X with source dirt X 0 as well as a Y with source dot y 0. 
+
+All right if you've done that then we also need the diagonal, for this I'm going to have a return diagonal and then au and au, so we'll have the x and y position.
+
+ The diagonal will take every time the x and y position what's coming from the source and the source from x 0 and y 0.
+
+ Now one of the last things that we have to do is actually updating them, 
+
+we will have a variable link update and we'll have a link enter don't merge link and if you remember this is the same thing as we did in nodes.
+
+ So you have the link update don't transition and duration with a parameter of transition did you recite it in one of the first lessons to 750 milliseconds, 
+
+then the attribute with D and function and the function again will return the diagonal. 
+
+If you did that then we have one last thing to do and we will see the result, 
+
+var Erling exits. So we updated the links and now we want to exit. 
+
+We will call the exit method and then the transition method and the duration methods.
+
+ All right after that I'm going to need the attribute, this time the ant repeat will have D with a function and the function is going to return leave. 
+
+Let's copy and paste this one, the variable and the diagonal. The same thing again, if you want to write it okay or else you can just copy and paste it. Have the remove methods and then continue with nodes dot or itch, the forage will loop for every node that we have and the function will have D x0 equals D to X and the same for other Y. 
+
+If you also did that then the last thing is save and go back to the browser and you press the websites. You can click on everything and you will see that they collapse. 
+
+So you have a level a, you have level one and again it collapse but the level three is not collapsible because it's on the last part of our nodes and third was eight for our tree diagram, I hope you will continue using it. 
+
+We started this section with a basic structure of the tree diagram then we continued building and connecting announced with the links, we updated the nodes as well as we updated the links. In the last part we collapsed the nodes and see the final results. 
+What's coming up is creating your own map, we will learn a lot of things about the GeoJSON files, about projections and even more things that,
+
+ I'm sure you will have a lot of fun, stay tuned and thanks for watching.

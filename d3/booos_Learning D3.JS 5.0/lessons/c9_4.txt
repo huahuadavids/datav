@@ -1,0 +1,66 @@
+Hello and welcome back. 
+In this video, we are going to talk about updating the nodes 
+
+so let's go back to the text editor and continue with our code.
+ In the last lesson we wrote a function click but we didn't do anything about it so let's start working on this click function right away.
+
+ We will have the function and the name of fate will be click and it will stick in take an input which will be the D. 
+
+Now if I have the children then I need to have a dust children equals d dot children.
+
+ And what we are trying to do right now is saying if it's the last children for all the children then you don't have to do anything 
+
+but if else then you should be able to toggle the children in order to open and see the other children and that's it,
+
+ simple as that. So let's continue. Again in the previous lesson we talked about the node enter but now we also need to make the updates.
+
+ After they have taken off nodes we will do the exit nodes but let's continue with the updates. 
+
+The first thing we need to do is to have a node enter don't merge and node, 
+
+merge is new methods as well as transition and duration. 
+
+If you can recall a duration has also property that we said it earlier in this section,
+
+ it is said it is 750 milliseconds.
+
+ Transition and duration helps us with making the link between the nodes more functional and more pretty for our user. 
+
+I will continue with the attribute, it will have a transfer and a function with T that will return the translates.
+
+ Now the translate will help ad dot Y as well as ad dot X.
+
+ After the transition is time to update the node attributes and of course style them.
+
+ So let's continue with node updates, this time I'm going to have select all and circle dots node.
+
+ Ok if you did that that also continued with attribute, you always have to set the attribute, 
+
+I'm going to have an R for radius and 10. Now I'm going to need another attribute with cursor and a pointer, he can have a pointer but that's not necessary.
+
+ Last but not least we will remove the existing nodes. To do that you will need a new variable 
+
+and it will be named not exit. Now node exit will have node and an exit method as well as a transition method.
+
+ Right after that you will need the iteration so this part is exactly the same as the update,
+
+ first you have the transition and then you have the duration. 
+
+The duration property is going to be here at the same as before.
+
+ As for the attribute you will need again the transform and the function with D 
+
+and the translate. For the translate we have to change a few things, now you have x and y.
+
+ Last but not least keep the remove methods. 
+
+Okay now you need an exit to reduce the node circles from the side that they already have to zero, so we'll have node exit don't select the circle and the attribute will be 6, if he gave it another number then keep your other number.
+
+ I'm going to do the same for the text but this time for the attribute I'm going to have the fill opacity and the fill opacity will be set to 6.
+
+ And one last thing is to add the update D function to of the click function. In the next video we are going to see the final result but we will have to ride some few extra code.
+
+ We started with the basic structure of the teeth diagram and then in continue with the path between the points,
+
+ the nodes and the links and in this video we talked about how to update the rounds. 
+Stay tuned as in the last video is going to be the end of our tree diagram and we will see how to collapse the nodes as well as the final result, thank you very much for watching.
