@@ -1,0 +1,23 @@
+Hello, in this video we're going to examine some more real-life pieces of having tears a line chart. 
+
+Let's say we want to add a visual indicator for all the numbers that are greater than 50, maybe these are the important numbers for a project we are interested in. 
+
+So the first thing that I'm going to do is simply copy and then paste the creating line our codes that we wrote before.
+
+ Now I'm going to make a few changes, I'm going to make the variable important line and a little bit later I'm going to change this return function. 
+
+The x and y for now is going to be okay but I'm also going to change them a little bit later.
+
+ Now let's add here another parameter and this will be d 'dont number less or equal to 50. 
+
+And so now we have also to change the return, it's going to be greater or equal to 50. And now we are going to copy the second part with the SVG, we have to make a few changes to this code also. 
+
+The first one is going to be the attribute D with important and line and the next one is going to be the caller. Save and refresh. All right so the number is greater than 50 or visually represented with red so this makes our plot a bit more readable and user-friendly, but why not go a bit step further and occlude the area chart. The area chart can visualize the volume, 
+
+let's go back to the text editor and I'll show you what I mean. The process for creating an area chart is the same as creating a line chart. First you create a function, then create the path elements, bind the data to the element with a datum function and snored with the data and under function and lastly pause the function that provides the coordinates to the area. I'm going to use here y0 and y1. 
+
+Again three licks I knew why I'm doing this but I'm sure that you will see the result and you are going to understand it, I'm also going to add the arranged function so I don't name the date dot number but I'm going to add an array with zero. 
+
+Then I'm going to have some a few changes in the SVG. Now I don't have a line but I have an area and I also don't need the attribute with stroke poor with stroke with the width. Last but not least change the color, I will add gray, I'm going to save and refresh. All right, here we have our plot, I think this is more eatable, more user friendly and anyone can understand it more easily. 
+
+This was a great section since we talked about the plot, the scatter plot we added and style the X and the y axis and then we continued with a line chart. First we saw a basic structure and then we draw the line. Now in this lesson we talked about the area chart and we added some visual information. What's coming up is way more excited, we are going to examine another case of plots and this time it will be the tree diagram. In the next section the club's will tree diagram, thank you.

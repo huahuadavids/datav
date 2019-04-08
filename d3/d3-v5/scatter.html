@@ -70,7 +70,7 @@
 
   const scaleY = d3.scaleLinear().domain([0, d3.max(data, function (d) {
     return d[1] + $padding
-  })]).range([0, $height])
+  })]).range([$height , 0])
 
 
   const axisX = d3.axisBottom(scaleX);

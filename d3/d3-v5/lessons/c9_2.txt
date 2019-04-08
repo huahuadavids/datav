@@ -1,0 +1,66 @@
+Hello and welcome back. 
+In this video, we are going to talk about coding horizontal tree. Open up your favorite text editor and download the code that is provided in the external sources. After you downloaded the files you'll say that we have an index.html and not Julius and it's style dot CSS.
+
+ First I would like to mention that this is a simple example of the code that draws a tree diagram,
+
+ this is more for the understanding of the process or rather than because it is a great example of code for drawing a tree diagram.
+
+ All right in the index.html I have changed my title of the section line. Now first let's see the style that CSS.
+
+ Here I have a bar chart as always with width, height, background color and margin.
+
+ This time margin is set to 25 pixels whereas in the previous section it was set to 20 pixels. 
+
+After that I have a node with circle that you are going to use later as well as a node with text and some link,
+
+ these classes are going to be used later in the section. 
+
+Then per JavaScript section starts and the first thing that happens is that we declare our array of data the following codes.
+
+ A variable with the tree data and the name with a children, every time we will have name and children, 
+
+this means nodes and links. 
+
+The second part that you will notice is that we have said it the dimensions and the padding of the diagram,
+
+ everything is a variable and are set to pixels. 
+
+So you have a padding of 60 amberjack with 800 and a margin of hate 600. 
+
+Then we have a few more things but the following part I think is familiar to you. 
+
+We will append the SVG object to the board of the page and then we will append a group with G to the element SVG.
+
+ So far we have created the variable SVG and there we have the D3 with dot select bar chart as always, 
+
+we are appending the SVG and then we have two attributes, one for the width and one for the heights. 
+
+The width is set to bar chat width plus padding and the height is budget height plus padding.
+
+Then we will append g and g stands for group, and last but not least we will have the attribute with transfer and translate.
+
+ We have three more variables and this our i duration and route.
+
+ I'm not going to talk a lot about these three variables as you are going to see me working with them later in this section. 
+
+Let's keep going, we have declared another variable and this top it's called tree map. 
+
+This variable is set to D3.3 and 3 is the main function between means if you are going to use the hierarchical tree type runs.
+
+ And then we have the dot size, it takes two parameters, 
+
+the virtual types and the bar checked width.
+
+ Let's continue with some more assignments. So we have an assignment to parent, children, bar chat height and depth, 
+
+the variable route takes D3 dot hierarchy and inside there we have a function. We get the tree map and then the function with the d parameters that will return the d dot children and d usually stands for data and children is a parameter for our data 
+
+that we have defined at the start of this file.
+
+ After that we will need an X 0 and y 0. 
+
+So we have root dot X 0 and we will set it to bar chart height to 2 and a root y 0 which sets which is being set to 0. 
+
+All right, all these things maybe are quite a lot but I will assure you that I will explain everything as we keep going with this section. Now the last thing here is the updates which is a function that takes in parameter route. 
+
+In the next video we are going to start writing this function. So far we so what is a tree diagram and the basic structure of it. In the next video we are going to talk about drawing paths and linking the points or the nodes. Stay tuned and see you in the next one.

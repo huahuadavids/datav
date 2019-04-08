@@ -1,0 +1,33 @@
+Hello, in this video we're going to talk about how to draw the line. In the resource have provided link for a library called shade, this library can be found in D3 shape and is responsible for drawing complex shapes like for lines and areas so you don't have to think all the mods and the complicated procedures, 
+
+after all D3 makes your life easier. If you scroll down you will find some amazing things that you can build but first continue watching this video and then go back. 
+
+Currently we are but in the app dot js. First let's write the comment creating the line and now let's make the first variable, we are going to use the line function that we just sew. 
+
+All right after that we are going to need another function dot X which will include a function with D and we'll return the X scale. I'm going to do the same for the Y but first for the X scale I'm going to drop the D don't date. 
+
+The Y scale is going to have the D but this time it will return the Y scale and the D dots number. So you have the date and the number and do we are done. The next thing is creating an SVG with append. 
+
+The append will call the path and this time instead of having the data or the answer function we are going to have the datum.
+
+ Datum will take the data so this time we are having a path which means we have a line and not multiple things,
+
+ that's why you don't need the data or the enter functions or one thing for one element waiting the day to.
+
+ Save, refresh and go to the console tab, if you click on line then you will see that it takes an function and this is what we expect it.
+
+ Here is located all your functions, all your coordinates and your comments.
+
+ If you didn't use this function then you should tried all these things by your own but let's go back to the text editor in order to fix this plot because it's not very beautiful as it currently is.
+
+ We're going to add three attributes, the first one is going to be filled with none so this will have no color, 
+
+then we are going to add the color we have the stroke. The stroke for me is going to be green but for you it can be whatever you like.
+
+ The last attribute is going to be the stroke width, I'm going to add a width of 5. 
+
+Now let's go back to creating the lines. Before the X and after the line I'm going to add another function, this function is going to be called defined and this function returns true or full our folds. It's going to have it D and then in the return I'm going to have the date dot number greater or equals to 0, if the result is true then everything is fine, if the result is false then the negative numbers isn't going to be visible in our plot. Save, refresh and here it is, everything seems great. So you are ready to continue with the next step which is visualizing more beautiful the data. 
+
+So far we added install the x-axis and the y-axis of a scatter plot, then we continue by the basic structure of the line charts and then in this video we saw how to draw the lines. 
+
+Stay tuned as in the next video we are going to add visual information we are needed to make our plot a little bit more beautiful and readable, thank you and stay tuned for the next video.

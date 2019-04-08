@@ -1,0 +1,13 @@
+Welcome to the 9th section, the collapsible tree diagram. In this section we are going to learn about her article data structure. Together we will code a horizontal, interactive, collapsible tree diagram so the user can click on any power node and it will collapse on itself to make more rooms for others or to simplify view. 
+
+But first let's find out what is the tree diagram. The tree layout is not a distinct type of diagram person, instead it's a representative of D3 formerly a herd to layouts.
+
+ It's designed to produce a node link diagram that lays out the connection between nodes in a method that this plays the relationship of one node to another in a parent-child fashion.
+
+ The clear advantage to this style of diagram is that this graphic 18 text is difficult but representing H graphically makes the relationship easy to determine. Let's go back and remember water nodes and links. 
+
+So a tree Tigra requires two data arrays, one for the nodes and run for the links. 
+
+Referring to nodes links containing the object like parents and children, whereas links identifies all the links between the nodes and the more mathematical way to remember links are edges. We can have nodes without links and links without nodes. 
+
+So far will learn what is a tree diagram but stay tuned as we will start coding. Stay tuned as in the next video is the basic structure of a tree diagram, keep watching and thank you very much.
