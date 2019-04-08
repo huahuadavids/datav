@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  #app {
+    width: 400px;
+    height: 400px;
+  }
+
+</style>
+
+
+<svg id="app">
+
+
+</svg>
+
+<script src="../lib/d3@5.9.0/d3.js"></script>
+<script>
+  /**
+   * @name d3 shape 1  line
+   * @type {number[][]}
+   */
+  function drawLine(){
+    var data = [[30, 30], [330, 20], [220, 330], [630, 330]],
+      canvas = d3.select('#app'),   //  页面中已经存在id为canvas的SVG元素
+      lineGenerator = d3.line().x(d => d[0]).y(d => d[1])
+
+    //  在SVG上添加折线
+    canvas.append('path')
+      .attr('stroke', 'purple')
+      .attr('stroke-width', '3')
+      .attr('fill', 'none')
+      .attr('d', lineGenerator(data));
+  }
+  drawLine()
+
+</script>
+
+</body>
+</html>
