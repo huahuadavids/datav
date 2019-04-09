@@ -1,0 +1,25 @@
+In this video, we are going to see the basic structure of a simple map so let's step into the code.
+
+ The first thing that you have is the index dot HTML file, this is the same except that in the title I have section 10 and start off 9 and now let's continue with style dot CSS. 
+
+And here pretty much everything is the same, I have a width, height, background color and margin, nothing more but now let's continuous data.json.
+
+ Here we have an object, the type is feature collection as we have a collection of countries and then you have an array of features. For every country there is a different object, the object includes the type, ID, properties with the name 
+
+and the geometry with type and coordinates. Last but not least we have the app dot js, 
+
+and here we have the bar chart width and height these are the same but then we continue with a projection.
+
+ I have created a variable named path, D3 dot geo path will return a function that will take in the GeoJSON and convert it to something as which you can understand in order to draw the map,
+
+ after that I have changed the projection method. D3 comes with some default projections, I'm going to use the projection 0 market a tour to find more about the default projections or what's its best in your case you can visit GitHub own D3 to your projection.
+
+ I'll also include this link in the external sources. And this is the dual market a tour,
+
+ there are more examples so you can pick whatever you may think suits best in your case. 
+
+All right now let's go back to the text editor. First I have selected the bar chart then I append in the SVG and as always I have two attributes, one for height and one for width. The next thing that we have to do is to load the data. To do so I'm : D3 JSON. 
+
+The first parameter is the name of the file with your JSON, then you'll have a promise which accepts an anonymous function and this function holds your map data. To begin drawn everything you'll need to use the SVG select all as well as the data with features, I've also added the enter, append and attribute methods. Let's see what we got so far, save and refresh your website. And this is what we got so far. If you go to the element tab and then you click on SVG and path you will see that you have 10 different paths, this are for you 10 different countries. In the next video I'm going to show you how to make your map a little bit bigger so you will be able to see everything more. So far with so what is a JSON file as well as the basic structure of a map chart. 
+
+The next video we will continue working on the map, we will make it a little bit prettier as well as we will extend the projections. Thank you very much and see you in the next video.

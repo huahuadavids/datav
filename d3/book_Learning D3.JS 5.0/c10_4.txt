@@ -1,0 +1,28 @@
+So far we have a map and some countries are defined visually by the borders. 
+
+In this video we are going to add the capital city or its country as well as a circle that indicates the population, 
+
+let's go back to the text editor and I'm going to show you how to do that.
+
+ The first thing we need is another JSON file, I'm going to add this file in the resources section of this course so you can use it on your own. 
+
+In this JSON file I have the city's, then the population, the latitude and the longitude. 
+
+The cities are ten as well as the countries that we are having, all right now let's go back to the update js. I have added comments, call the function for the cities and here I'm going to have my function create city circles and what this function is going to do is a loading the JSON after the map and also adding some styles. 
+
+I will need the D3 - JSON, data a JSON which is going to change in a bit and then then function and inside there I'm going to have the data but this parameter is also going to change as we don't want you to get confused. 
+
+A half of the SVG with select all circle and then the data which will have our parameter and this parameter is going to be the Capitals data, so I'm going to change that in the parameter function. Let's continue with enter and append. In the appends I'm going to meet the circle, a right after that I'm going to add this style. 
+
+This style is going to be filled with red but you can add whatever you like and also start with opacity 0.6. 
+
+I'm going to have two attributes and these are for the coordinates. A function which is anonymous will take the D and will return the projection with a longitude and latitude.
+
+ Now this array will return 2 values but you only need one value, that's why I'm using the zero and zero is 4x. Now I did the same thing for y and one for white. For the r which means radius I'm going to have a return math dot a security bars int detailed population and I'm going to have the population x 0.0001 so I can see the circle a little bit better or else it would be huge. I'm going to append the title and this will help us when we hover over a capital city and then I'm also going to add the text with a function and D that will return the d dot city which is the name of our city. 
+
+
+Alright refresh your website and you should be able to view the red circles which stands for our cities. 
+
+If you hover over one city then again it should be able to use the name of the capital city of its country. And that was it for our countries and cities.
+
+ We started this section by learning what is the GeoJSON file, then we saw a basic structure of a map charts and then we talked about projections. After that we added some style her better user experience and then we also added some more functionality to make it look like more real case scenario. The next video we are going to see what else can we add to our map, see you in the next video.

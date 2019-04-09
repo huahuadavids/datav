@@ -1,0 +1,35 @@
+In this video, we are going to talk about the geographic projection as well as we are going to style a little bit more our mod.
+
+ Let's start with changing the projections.
+
+ I'm going to create a new variable called projection, 
+
+now I'm going back to the side that I saw you the previous time. 
+
+You can try to add another method. 
+
+Now let's go back, I'm going to add another method, the scale which will make bigger or smaller our map. 
+
+I'm going to add inside there the bar chart width and two and then I'm going to have the translates.
+
+ The translate will take the width and the height and these will help us to structure and 
+
+locate the mob wherever we want to.
+
+ I'm going to get the bar chart width and height but then you'll see that I'm going to change both the scale and the translate.
+
+ Now I have to make a few more changes like the path is going to be only D3 geo path and projection.
+
+ All right let's continue with styling the data. I'm going to add the attribute, feel and I'm going to give it the color gray, I'm going also to add the stroke with a black color and then I'm going to need to add the stroke width and give it another value which will be the 2.
+
+ All right now save and refresh. As you can see we have a problem, our map isn't really visible, can you guess why. Well I'll give you a clue. In the projection we have the scale and we have the translate, with the scale we made our map bigger and with the translate we change the position with width and height. 
+
+And so now has a small project for you, return to your text editor, go back to the projection and try to find a solution working with height and width.
+
+ The solution is not unique, pause the video and then I'm going to show you my solution. Alright did you find some ones that are working for your map, if you did great, if not just keep on watching.
+
+ Alright so it changed the projection with the scale to 600 and the six it is the pixels and then I change the translate values,
+
+ cut the width with 3 and the height plus 350, also I change the variable of martyred height to 400 pixels and not 600. That's just one solution, you may have found something else something completely different and that's fine but this is something that works for me. 
+
+We started this section with learning what is the GeoJSON file and then we continue with the basic structure of a map chart. Then we continue with projections and then with styles error map. What's coming up is adding some more functionality to the map. In the next videos you are going to learn a lot of things, see you in the next one.

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  .box {
+    width:100px;
+    height:200px;
+    margin-left:100px;
+  }
+
+</style>
+<script src="../lib/d3@5.9.0/d3.min.js"></script>
+<script>
+  const duration = 5000;
+  d3.select("body").append("div").classed("box", true).style("background", "#e9967a").
+    transition() // this method return transition bound  selection
+    .duration(duration)
+    .style("background", 'green')
+    .style("width", '300px')
+    .style("height", '300px')
+    .style("margin-left", '900px')
+
+</script>
+
+
+<script>
+
+  const $width = 300, $height = 300;
+
+  function render(data){
+    const selection = d3.select("body").selectAll("div.v-bar").data(data, d => d.id )
+
+    selection.enter().append("div").classed("v-bar", true)
+      .style("z-index", 0)
+      .style("position", "fixed")
+      .style("top", $height + "px")
+      .style("height", "0px")
+      .style("left", (d,i) => barLeft(i+1) + 'px')
+      .append("span")
+
+
+    selection.transition().duration(1000).style("top")
+
+  }
+
+</script>
+
+</body>
+</html>

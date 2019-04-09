@@ -1,0 +1,50 @@
+Welcome to the last section of this course have fun with maps and GeoJSON. 
+
+In this section you will learn what is the GeoJSON,
+
+ how to use it and how to generate map data.
+
+ We will code and customise our own map as well as discuss about projections and chloroplasts.
+
+ We will start with what is the GeoJSON and format. Maybe the most popular way that people use D3 is when they are working with maps.
+
+ Maps need a place for their data, this is usually being done with GeoJSON.
+
+ D3 supports GeoJSON formats so you don't have to do anything extra and also don't can confused with the name GeoJSON,
+
+ as it simply JSON files. What makes them different is the GeoJSON can handle the paths and coordinates the D3 needs in order to create the map. 
+
+In the resources section of this course I have provided a link for GeoJSON sites,
+
+ let's navigate to the site and see the example. 
+
+And here is the example of the official web sites.
+
+ As you can see there is an object, the object contains other objects and projections. 
+
+One of the properties that you always have to use is the type property, this is the property that defines the shape you want to draw. 
+
+As it's being written and read example the most common types are points, line string, polygon, multi points, multi-line string and multi polygons, all of these aerials shapes.
+
+ After the type you'll notice the geometry property, this is the place where you actually begin to create your shapes and again you will need a type but also the coordinates. 
+
+In order to keep all your data together you will need to work with GeoJSON sites. 
+
+In the resources section of this course I've also provided a site to help you with that, 
+
+please visit outside also.
+
+ With this site you can create your own GeoJSON files, 
+
+I'm going to show you how to do that. 
+
+You can go on regions and click whatever you may like and you will see for example that the part that you have selected is colored or you can click on your own the countries that you want to select. 
+
+In the resources section I have provided a JSON file that I'm going to use for the rest of this course but of course as always you can use your own file.
+
+ A good practice is to always check your JSON file in order to see if your data is correctly structured. 
+
+If you want to check your data then I will have a link in the resources section to do that. 
+
+Navigate to the GeoJSON sides and here you can see the selected countries. I'm going to work with the Central Europe and some other countries, I don't want to have too many data as I don't want this example to be too complicated. If you download it, the JSON file then we are good to go. 
+So far we saw what is the GeoJSON file, how you can use it and how you can validate it. In the next video, we are going to start working with map. Stay tuned and see you in the next video.
