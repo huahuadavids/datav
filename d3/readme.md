@@ -19,6 +19,7 @@
 - [d3 入门到精通系列](https://blog.csdn.net/tianxuzhang/article/list/4?)
 
 ### notes
+- 和<svg>元素相比，g元素不支持定位属性x和y，需要定位的时候可以用变换属性代替: transform="translate(x,y)
 ```
 var scale_x = d3.scaleBand()
 .domain(d3.range(data.length))
@@ -31,3 +32,4 @@ var scale_x = d3.scaleBand()
 - scale的 range 改为 rangeRound，可以让视图域，只取整数，因为d3对svg的小数处理不精确
 - paddingInner 是中间的两个bandWidth的距离 可以把返回值增大
 - paddingOuter 是边上的两个的
+- defined 方法 ，过滤合适的数据 ，图形会断开

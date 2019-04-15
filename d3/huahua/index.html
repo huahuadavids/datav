@@ -17,8 +17,8 @@
   }
 
   #app svg {
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
   }
 
 </style>
@@ -36,9 +36,11 @@
    */
   function drawLine() {
     var
-      dataSource    = [[30, 30], [330, 20], [220, 330], [630, 330]],
-      drawingBoard  = d3.select('#app').append("svg").attr("viewBox", "0,0 400,400"),
+      dataSource = [[30, 30], [330, 20], [220, 330], [630, 330]],
+      drawingBoard = d3.select('#app').append("svg").attr("viewBox", "0,0 400,400"),
       lineGenerator = d3.line().x(d => d[0]).y(d => d[1])
+    // .curve(d3.curveCardinal); 加上这个就是圆滑的曲线
+
 
     //  在SVG上添加折线
     drawingBoard.append('path')
@@ -46,7 +48,97 @@
       .attr('d', lineGenerator(dataSource));
   }
 
-  drawLine()
+
+  function drawRadialLine() {
+    var drawingBoard = d3.select('#app').append("svg").attr("viewBox", "0,0 200,200")
+    var radialLineGenerator = d3.radialLine();
+    // radialLineGenerator
+    //   .angle(function(d) {
+    //     return d[0];
+    //   })
+    //   .radius(function(d) {
+    //     return  d[1];
+    //   });
+    var points = [
+      [100, 180],
+      [-Math.PI * 0.25, 80],
+      [Math.PI * 0.5, 30],
+      [Math.PI * 0.75, 80],
+      [Math.PI, 80],
+      [Math.PI * 1.25, 80],
+      [Math.PI * 1.5, 80],
+      [Math.PI * 1.75, 80],
+      [Math.PI * 2, 80]
+    ];
+
+    var pathData = radialLineGenerator(points);
+    drawingBoard.append('path')
+      .attr('stroke', 'purple').attr('stroke-width', '3').attr('fill', 'none')
+      .attr('d', pathData);
+
+  }
+
+
+  function drawArea() {
+    var drawingBoard = d3.select('#app').append("svg").attr("viewBox", "0,0 800,800")
+    var areaGenerator = d3.area();
+    areaGenerator.y0(200); //定义基准线
+    var points = [
+      [0, 80],
+      [100, 100],
+      [200, 30],
+      [300, 50],
+      [400, 40],
+      [500, 80]
+    ];
+
+    var pathData = areaGenerator(points);
+    drawingBoard.append('path')
+      .attr('stroke', 'purple').attr('stroke-width', '3').attr('fill', 'red')
+      .attr('d', pathData);
+  }
+
+
+  function drawArc() {
+    var drawingBoard = d3.select('#app').append("svg").attr("viewBox", "0,0 800,800")
+    var arc = d3.arc();
+
+    var g = drawingBoard.append("g").attr("transform", 'translate(122,100)')
+
+    const shape = arc({
+      innerRadius: 20,
+      outerRadius: 100,
+      startAngle: 0,
+      endAngle: Math.PI *2
+    }); // "M0,-100A100,100,0,0,1,100,0L0,0Z"
+
+    g.append('path')
+      .attr('stroke', 'purple')
+      .attr('d', shape);
+  }
+
+  function drawPie(){
+    var drawingBoard = d3.select('#app').append("svg").attr("viewBox", "0,0 800,800")
+
+    var data = [
+      {"number":  4, "name": "Locke"},
+      {"number":  8, "name": "Reyes"},
+      {"number": 15, "name": "Ford"},
+      {"number": 16, "name": "Jarrah"},
+      {"number": 23, "name": "Shephard"},
+      {"number": 42, "name": "Kwon"}
+    ];
+
+    var arcs = d3.pie()
+      .value(function(d) { return d.number; })
+      (data);
+
+    drawingBoard.append('path')
+      .attr('stroke', 'purple')
+      .attr('d', arcs);
+  }
+  drawPie()
+
 
 </script>
 
